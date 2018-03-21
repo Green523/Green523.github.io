@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[个人博客添加Travis CI持续集成]]></title>
+    <url>%2F2018%2F03%2F19%2F%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90%2F</url>
+    <content type="text"><![CDATA[上周看了一篇关于个人博客添加持续集成功能后有不少优点，就突然想要给自己的个人博客也添加一个持续集成的功能。持续集成的优点很多,可参考这个网址。开始瞎折腾了：1.用你的github账号登录Travis-ci（公共仓库 https://travis-ci.org/）2.向下拉，找到你的仓库文件,并允许此项目使用travis ci3.添加配置文件 .travis.yml参考文档资料，看看怎么写自己的配置文件,用以定义travis ci的执行步骤。4.登录github，并添加token。只用勾选第一个大选择框 repo，生成token后，将token复制下来备用5.安装ruby依赖环境和travis命令行工具travis命令行工具在ruby环境安装完成后，使用如下命令安装即可1gem install travis友情提示：ruby安装可直接点击链接下载for windows版本的。我安装的ruby是2.4版本，因为博友们说2.5版本的会报错。安装好后可使用如下命令检查ruby是否安装好1ruby -v6.使用travis命令行工具，登录travis，并加密你的博客仓库，并设置好刚才的复制下来的token。登录travis的用户名和密码即github的账号和密码。加密博客仓库1travis encrypt -r &lt;github name&gt;/&lt;github repo&gt; GH_Token=XXXXXXXX然后你需要将secure后面部分复制到.travis.yml文件中。也可以在运行上述命令行时添加一个–add，它就会自动的在.travis.yml中加入secure键值对，如1travis encrypt -r &lt;github name&gt;/&lt;github repo&gt; GH_Token=XXXXXXXX --add https://docs.travis-ci.com/user/deployment/pages/]]></content>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[踩坑记--hexo中加入音乐]]></title>
+    <url>%2F2018%2F01%2F23%2Fhexo%E4%B8%AD%E5%8A%A0%E5%85%A5%E9%9F%B3%E4%B9%90-%E8%B8%A9%E5%9D%91%2F</url>
+    <content type="text"><![CDATA[我一直都想要做一个人博客。不久前，朋友推荐我来玩玩hexo，之后我就开始了自己的踩坑之旅……其实我用github+hexo搭建个人网站的时候挺顺利的，重在我修改next主题的默认样式以及加入小功能的时候，感觉有点费力。今天呢，我想讲讲我昨天是怎么把音乐给折腾出来的。在我想要给我的博客加入音乐的时候，就搜罗了网上的解决办法，一种是用网易云音乐生成iframe插件,直接复制对应歌曲下方的html代码,然后放在你想要播放音乐的页面一种是用hexo的音乐播放插件Aplayer，附上你的音乐外链。我是采用的第二种但是做这个音乐与图片外链，昨天折腾了我一下午。我在网上百度了很多方法，用qq邮箱，百度云，音乐分享的链接都没成功，去了七牛云注册又不想去实名认证，所以不能用。伤心三秒，想到了之前我给博客加入评论系统的时候，使用的leancloud，完美解决了图片与音乐外链问题。直接上方法了……leancloud看官网介绍，它是国内的一个BaaS(翻译:后端即服务：Backend as a Service)供应商，提供后台云服务。反正对于我的理解就是，可以让它当我的个人博客的一个后台，可以为我存储数据，做统计分析等等第一步：去leancloud官网，注册,选择个人用户，开发版的是免费的。第二步：登录你的leancloud账号，点击创建应用第三步：到你创建的应用里面去，点击存储，见下图，点击_File，点击上传，找到你下载好的音乐文件和你的音乐图片(图片大概70×70就够了)上传上去就行了。将列表向后拉，便可以看到对应音乐和图片的url链接啦在这里特别说明一下，有时候可能由于网络的原因，上传后音乐文件可能没有及时显示，如果你在列表中没看见你上传的文件，可以手动刷新试试。第四步: 在你想要加入音乐播放器的页面，可复制如下代码1&#123;% aplayer "可以了" "陈奕迅" "https://xxx.xxx.com/92b3af330d2274b1fa55.mp3" "https://xxx.xxx.com/xx.png" "autoplay" %&#125;如果你想放一个音乐list的话可以将上面代码换成1&#123;% aplayerlist %&#125;&#123;"narrow": false,"autoplay": true,"showlrc": 3,"mode": "random","music": [&#123;"title": "美好事物","author": "房东的猫","url": "http://xxx.xxx.com/945198c4909674765644.mp3","pic": "http://xxx.xxx.com/6e0e9e63cb0733f7ff12.png","lrc": ""&#125;,&#123;"title": "尚好的青春","author": "云の泣","url": "http://xxx.xxx.com/5b42b829b8ae08ccabe0.mp3","pic": "http://xxx.xxx.com/889df742eca5261f2fc5.png","lrc": ""&#125;,&#123;"title": "预谋邂逅","author": "阿肆","url": "http://xxx.xxx.com/1bd4f91441982710bcad.mp3","pic": "http://xxx.xxx.com/f72d61579f74d4ff9ce0.png","lrc": ""&#125;]&#125;&#123;% endaplayerlist %&#125;效果如下：PS：如果上面的步骤你都做好了，但是音乐不能播放，显示error happen的话，应该是你的音乐文件有问题，可以去leancloud点击一下你的音乐文件试试能否播放。]]></content>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+</search>
