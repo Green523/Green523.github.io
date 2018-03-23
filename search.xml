@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[hh]]></title>
+    <url>%2F2018%2F03%2F23%2Fhh%2F</url>
+    <content type="text"><![CDATA[]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[个人博客添加Travis CI持续集成]]></title>
     <url>%2F2018%2F03%2F19%2F%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90%2F</url>
-    <content type="text"><![CDATA[上周看了一篇关于个人博客添加持续集成功能后有不少优点，就突然想要给自己的个人博客也添加一个持续集成的功能。持续集成的优点很多,可参考这个网址。开始瞎折腾了：1.用你的github账号登录Travis-ci（公共仓库 https://travis-ci.org/）2.向下拉，找到你的仓库文件,并允许此项目使用travis ci3.添加配置文件 .travis.yml参考文档资料，看看怎么写自己的配置文件,用以定义travis ci的执行步骤。4.登录github，并添加token。只用勾选第一个大选择框 repo，生成token后，将token复制下来备用5.安装ruby依赖环境和travis命令行工具travis命令行工具在ruby环境安装完成后，使用如下命令安装即可1gem install travis友情提示：ruby安装可直接点击链接下载for windows版本的。我安装的ruby是2.4版本，因为博友们说2.5版本的会报错。安装好后可使用如下命令检查ruby是否安装好1ruby -v6.使用travis命令行工具，登录travis，并加密你的博客仓库，并设置好刚才的复制下来的token。登录travis的用户名和密码即github的账号和密码。加密博客仓库1travis encrypt -r &lt;github name&gt;/&lt;github repo&gt; GH_Token=XXXXXXXX然后你需要将secure后面部分复制到.travis.yml文件中。也可以在运行上述命令行时添加一个–add，它就会自动的在.travis.yml中加入secure键值对，如1travis encrypt -r &lt;github name&gt;/&lt;github repo&gt; GH_Token=XXXXXXXX --add https://docs.travis-ci.com/user/deployment/pages/]]></content>
+    <content type="text"><![CDATA[上周看了一篇关于个人博客添加持续集成功能后有不少优点，就突然想要给自己的个人博客也添加一个持续集成的功能。持续集成的优点很多,可参考这个网址。开始瞎折腾了：1.用你的github账号登录Travis-ci（公共仓库 https://travis-ci.org/）2.向下拉，找到你的仓库文件,并允许此项目使用travis ci3.添加配置文件 .travis.yml参考文档资料，看看怎么写自己的配置文件,用以定义travis ci的执行步骤。4.登录github，并添加token。只用勾选第一个大选择框 repo，生成token后，将token复制下来备用5.安装ruby依赖环境和travis命令行工具travis命令行工具在ruby环境安装完成后，使用如下命令安装即可1gem install travis友情提示：ruby安装可直接点击链接下载for windows版本的。我安装的ruby是2.4版本，因为博友们说2.5版本的会报错。安装好后可使用如下命令检查ruby是否安装好1ruby -v6.使用travis命令行工具，登录travis，并加密你的博客仓库，并设置好刚才的复制下来的token。登录travis的用户名和密码即github的账号和密码。加密博客仓库1travis encrypt -r &lt;github name&gt;/&lt;github repo&gt; GH_Token=XXXXXXXX然后你需要将secure后面部分复制到.travis.yml文件中。也可以在运行上述命令行时添加一个–add，它就会自动的在.travis.yml中加入secure键值对，如1travis encrypt -r &lt;github name&gt;/&lt;github repo&gt; GH_Token=XXXXXXXX --add 7.登录travis ci，在给你选定的个人博客仓库添加环境变量https://docs.travis-ci.com/user/deployment/pages/]]></content>
       <tags>
         <tag>hexo</tag>
       </tags>
