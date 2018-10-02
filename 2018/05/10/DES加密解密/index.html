@@ -112,7 +112,7 @@
 
 
 
-  <meta name="keywords" content="hexo," />
+  <meta name="keywords" content="算法," />
 
 
 
@@ -123,25 +123,21 @@
 
 
 
-<meta name="description" content="我一直都想要做一个人博客。不久前，朋友推荐我来玩玩hexo，之后我就开始了自己的踩坑之旅……其实我用github+hexo搭建个人网站的时候挺顺利的，重在我修改next主题的默认样式以及加入小功能的时候，感觉有点费力。今天呢，我想讲讲我昨天是怎么把音乐给折腾出来的。在我想要给我的博客加入音乐的时候，就搜罗了网上的解决办法，一种是用网易云音乐生成iframe插件,直接复制对应歌曲下方的html代码">
-<meta name="keywords" content="hexo">
+<meta name="description" content="最近学习接口测试，涉及到了用户认证这块，突然想起以前有用JS自己实现过DES加密解密算法，可以加密并解密汉字。遂，提出来整理哈。DES全称为Data Encryption Standard，即数据加密标准，是一种使用密钥加密的块算法。它的加密和解密都是用的同一种算法。先上数据加密总体流程图吧！ 第一阶段：准备明文并分组（假设明文 data = 我是Green）：因为我实现的是汉字的加密解密，所以">
+<meta name="keywords" content="算法">
 <meta property="og:type" content="article">
-<meta property="og:title" content="踩坑记--hexo中加入音乐">
-<meta property="og:url" content="https://green523.github.io/2018/01/23/hexo中加入音乐-踩坑/index.html">
+<meta property="og:title" content="DES加密解密">
+<meta property="og:url" content="https://green523.github.io/2018/05/10/DES加密解密/index.html">
 <meta property="og:site_name" content="Green的博客站">
-<meta property="og:description" content="我一直都想要做一个人博客。不久前，朋友推荐我来玩玩hexo，之后我就开始了自己的踩坑之旅……其实我用github+hexo搭建个人网站的时候挺顺利的，重在我修改next主题的默认样式以及加入小功能的时候，感觉有点费力。今天呢，我想讲讲我昨天是怎么把音乐给折腾出来的。在我想要给我的博客加入音乐的时候，就搜罗了网上的解决办法，一种是用网易云音乐生成iframe插件,直接复制对应歌曲下方的html代码">
+<meta property="og:description" content="最近学习接口测试，涉及到了用户认证这块，突然想起以前有用JS自己实现过DES加密解密算法，可以加密并解密汉字。遂，提出来整理哈。DES全称为Data Encryption Standard，即数据加密标准，是一种使用密钥加密的块算法。它的加密和解密都是用的同一种算法。先上数据加密总体流程图吧！ 第一阶段：准备明文并分组（假设明文 data = 我是Green）：因为我实现的是汉字的加密解密，所以">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://green523.github.io/uploads/iframe.png">
-<meta property="og:image" content="https://green523.github.io/uploads/leancloudRegister.png">
-<meta property="og:image" content="https://green523.github.io/uploads/leancloud2.png">
-<meta property="og:image" content="https://green523.github.io/uploads/leancloud3.png">
-<meta property="og:image" content="https://green523.github.io/uploads/leancloud4.png">
-<meta property="og:image" content="https://green523.github.io/uploads/musicList.png">
-<meta property="og:updated_time" content="2018-01-23T04:30:12.676Z">
+<meta property="og:image" content="https://green523.github.io/uploads/明文：G.png">
+<meta property="og:image" content="https://green523.github.io/uploads/明文：我.png">
+<meta property="og:updated_time" content="2018-05-11T02:11:08.311Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="踩坑记--hexo中加入音乐">
-<meta name="twitter:description" content="我一直都想要做一个人博客。不久前，朋友推荐我来玩玩hexo，之后我就开始了自己的踩坑之旅……其实我用github+hexo搭建个人网站的时候挺顺利的，重在我修改next主题的默认样式以及加入小功能的时候，感觉有点费力。今天呢，我想讲讲我昨天是怎么把音乐给折腾出来的。在我想要给我的博客加入音乐的时候，就搜罗了网上的解决办法，一种是用网易云音乐生成iframe插件,直接复制对应歌曲下方的html代码">
-<meta name="twitter:image" content="https://green523.github.io/uploads/iframe.png">
+<meta name="twitter:title" content="DES加密解密">
+<meta name="twitter:description" content="最近学习接口测试，涉及到了用户认证这块，突然想起以前有用JS自己实现过DES加密解密算法，可以加密并解密汉字。遂，提出来整理哈。DES全称为Data Encryption Standard，即数据加密标准，是一种使用密钥加密的块算法。它的加密和解密都是用的同一种算法。先上数据加密总体流程图吧！ 第一阶段：准备明文并分组（假设明文 data = 我是Green）：因为我实现的是汉字的加密解密，所以">
+<meta name="twitter:image" content="https://green523.github.io/uploads/明文：G.png">
 
 
 
@@ -171,13 +167,13 @@
 
 
 
-  <link rel="canonical" href="https://green523.github.io/2018/01/23/hexo中加入音乐-踩坑/"/>
+  <link rel="canonical" href="https://green523.github.io/2018/05/10/DES加密解密/"/>
 
 
 
 
 
-  <title>踩坑记--hexo中加入音乐 | Green的博客站</title>
+  <title>DES加密解密 | Green的博客站</title>
   
 
 
@@ -314,7 +310,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://green523.github.io/2018/01/23/hexo中加入音乐-踩坑/">
+    <link itemprop="mainEntityOfPage" href="https://green523.github.io/2018/05/10/DES加密解密/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Green">
@@ -331,7 +327,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">踩坑记--hexo中加入音乐</h1>
+          <h1 class="post-title" itemprop="name headline">DES加密解密</h1>
         
 
         <div class="post-meta">
@@ -343,8 +339,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-23T08:41:04+08:00">
-                Tuesday, 23 January
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-10T20:06:47+08:00">
+                Thursday, 10 May
               </time>
             
 
@@ -359,7 +355,7 @@
             
             <span class="post-meta-item-icon">
               
-                <a href="/tags/hexo/" rel="tag"><i class="fa fa-tag"></i> hexo</a>
+                <a href="/tags/算法/" rel="tag"><i class="fa fa-tag"></i> 算法</a>
               
             </span>
          
@@ -374,8 +370,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/01/23/hexo中加入音乐-踩坑/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/01/23/hexo中加入音乐-踩坑/" itemprop="commentCount"></span>
+                <a href="/2018/05/10/DES加密解密/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/05/10/DES加密解密/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -403,9 +399,9 @@
       
 
       
-        <script src="\assets\js\APlayer.min.js"> </script><body lang="zh-Hans"><br><p>我一直都想要做一个人博客。不久前，朋友推荐我来玩玩hexo，之后我就开始了自己的踩坑之旅……其实我用github+hexo搭建个人网站的时候挺顺利的，重在我修改next主题的默认样式以及加入小功能的时候，感觉有点费力。今天呢，我想讲讲我昨天是怎么把音乐给折腾出来的。</p><p>在我想要给我的博客加入音乐的时候，就搜罗了网上的解决办法，一种是用网易云音乐生成iframe插件,直接复制对应歌曲下方的html代码,然后放在你想要播放音乐的页面</p><img src="/uploads/iframe.png" class="center" width="600"><p>一种是用hexo的音乐播放插件Aplayer，附上你的音乐外链。我是采用的第二种</p><p>但是做这个音乐与图片外链，昨天折腾了我一下午。我在网上百度了很多方法，用qq邮箱，百度云，音乐分享的链接都没成功，去了七牛云注册又不想去实名认证，所以不能用。伤心三秒，想到了之前我给博客加入评论系统的时候，使用的leancloud，完美解决了图片与音乐外链问题。直接上方法了……</p><p>leancloud看官网介绍，它是国内的一个BaaS(翻译:后端即服务：Backend as a Service)供应商，提供后台云服务。反正对于我的理解就是，可以让它当我的个人博客的一个后台，可以为我存储数据，做统计分析等等</p><br><p>第一步：去<a href="https://leancloud.cn/dashboard/login.html#/signin" target="_blank" rel="noopener">leancloud官网</a>，注册,选择个人用户，开发版的是免费的。</p><img src="/uploads/leancloudRegister.png" class="center" width="600"><p>第二步：登录你的leancloud账号，点击创建应用</p><img src="/uploads/leancloud2.png" class="center" width="600"><p>第三步：到你创建的应用里面去，点击存储，见下图，点击_File，点击上传，找到你下载好的音乐文件和你的音乐图片(图片大概70×70就够了)上传上去就行了。将列表向后拉，便可以看到对应音乐和图片的url链接啦</p><img src="/uploads/leancloud3.png" class="center" width="600"><img src="/uploads/leancloud4.png" class="center" width="600"><p>在这里特别说明一下，有时候可能由于网络的原因，上传后音乐文件可能没有及时显示，如果你在列表中没看见你上传的文件，可以手动刷新试试。</p><p>第四步: 在你想要加入音乐播放器的页面，可复制如下代码</p><figure class="highlight gcode"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="meta">%</span> aplayer <span class="string">"可以了"</span> <span class="string">"陈奕迅"</span> <span class="string">"https://xxx.xxx.com/92b3af330d2274b1fa55.mp3"</span> <span class="string">"https://xxx.xxx.com/xx.png"</span> <span class="string">"autoplay"</span> <span class="meta">%</span>&#125;</span><br></pre></td></tr></table></figure><p>如果你想放一个音乐list的话可以将上面代码换成</p><figure class="highlight clojure"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% aplayerlist %&#125;&#123;<span class="string">"narrow"</span>: <span class="literal">false</span>,<span class="string">"autoplay"</span>: <span class="literal">true</span>,<span class="string">"showlrc"</span>: <span class="number">3</span>,<span class="string">"mode"</span>: <span class="string">"random"</span>,<span class="string">"music"</span>: [&#123;<span class="string">"title"</span>: <span class="string">"美好事物"</span>,<span class="string">"author"</span>: <span class="string">"房东的猫"</span>,<span class="string">"url"</span>: <span class="string">"http://xxx.xxx.com/945198c4909674765644.mp3"</span>,<span class="string">"pic"</span>: <span class="string">"http://xxx.xxx.com/6e0e9e63cb0733f7ff12.png"</span>,<span class="string">"lrc"</span>: <span class="string">""</span>&#125;,&#123;<span class="string">"title"</span>: <span class="string">"尚好的青春"</span>,<span class="string">"author"</span>: <span class="string">"云の泣"</span>,<span class="string">"url"</span>: <span class="string">"http://xxx.xxx.com/5b42b829b8ae08ccabe0.mp3"</span>,<span class="string">"pic"</span>: <span class="string">"http://xxx.xxx.com/889df742eca5261f2fc5.png"</span>,<span class="string">"lrc"</span>: <span class="string">""</span>&#125;,&#123;<span class="string">"title"</span>: <span class="string">"预谋邂逅"</span>,<span class="string">"author"</span>: <span class="string">"阿肆"</span>,<span class="string">"url"</span>: <span class="string">"http://xxx.xxx.com/1bd4f91441982710bcad.mp3"</span>,<span class="string">"pic"</span>: <span class="string">"http://xxx.xxx.com/f72d61579f74d4ff9ce0.png"</span>,<span class="string">"lrc"</span>: <span class="string">""</span>&#125;]&#125;&#123;% endaplayerlist %&#125;</span><br></pre></td></tr></table></figure><p>效果如下：</p><img src="/uploads/musicList.png" class="center" width="600"><p>PS：如果上面的步骤你都做好了，但是音乐不能播放，显示error happen的话，应该是你的音乐文件有问题，可以去leancloud点击一下你的音乐文件试试能否播放。</p><br></body>    
-
-
+        <script src="\assets\js\APlayer.min.js"> </script><p>最近学习接口测试，涉及到了用户认证这块，突然想起以前有用JS自己实现过DES加密解密算法，可以加密并解密汉字。遂，提出来整理哈。<br>DES全称为Data Encryption Standard，即数据加密标准，是一种使用密钥加密的块算法。它的加密和解密都是用的同一种算法。<br>先上数据加密总体流程图吧！</p>
+<p>第一阶段：准备明文并分组（假设明文 data = 我是Green）：<br>因为我实现的是汉字的加密解密，所以涉及到了字符编码解码以及明文分组。<br>    1.在UTF-8中，一个汉字占3个字节，一个英文字母占1个字节，所以转换成二进制共24bit<br>    2.对二进制明文分组，DES算法要求分组为64bit一块<br>    <img src="/uploads/明文：G.png" class="center" width="600"><br>    <img src="/uploads/明文：我.png" class="center" width="600"><br>所以，明文：我是Green，转换为二进制：<br>实现代码如下<br><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> Tran &#123;</span><br><span class="line">	constructor(mdata)&#123;</span><br><span class="line">		this.data = mdata.<span class="keyword">split</span>(<span class="string">""</span>)</span><br><span class="line">		console.<span class="built_in">log</span>(this.data)</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	toBin()&#123;</span><br><span class="line">		<span class="keyword">var</span> engIndex = [],</span><br><span class="line">			enNo = 0,</span><br><span class="line">	        <span class="keyword">sum</span> = <span class="string">""</span></span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">var</span> i = 0;i&lt;this.data.length;i++)&#123;</span><br><span class="line">			<span class="keyword">var</span> temp = encodeURIComponent(this.data[i])</span><br><span class="line">			<span class="comment">//***汉字***</span></span><br><span class="line">			<span class="keyword">if</span>(temp.length == 9)&#123;		</span><br><span class="line">				 <span class="keyword">var</span> regExp=/^%(\w+)%(\w+)%(\w+)$/ig</span><br><span class="line">				 regExp.exec(temp)</span><br><span class="line">				 <span class="keyword">var</span> <span class="variable">$1</span> =parseInt(RegExp.<span class="variable">$1</span>,16).<span class="keyword">toString</span>(2)   </span><br><span class="line">				 <span class="keyword">var</span> <span class="variable">$2</span> =parseInt(RegExp.<span class="variable">$2</span>,16).<span class="keyword">toString</span>(2)</span><br><span class="line">				 <span class="keyword">var</span> <span class="variable">$3</span> =parseInt(RegExp.<span class="variable">$3</span>,16).<span class="keyword">toString</span>(2)</span><br><span class="line">				 <span class="keyword">var</span> hzBin = <span class="variable">$1</span>+<span class="variable">$2</span>+<span class="variable">$3</span></span><br><span class="line">				 <span class="keyword">if</span>(hzBin.length != 24)&#123;</span><br><span class="line">				 	console.<span class="built_in">log</span>(<span class="string">"汉字转二进制有问题"</span>)</span><br><span class="line">				 &#125;</span><br><span class="line">				 <span class="keyword">sum</span>=<span class="keyword">sum</span>+hzBin</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="comment">//***english***</span></span><br><span class="line">			<span class="keyword">else</span> <span class="keyword">if</span>(temp.length == 1)&#123;	</span><br><span class="line">				<span class="keyword">var</span> enBin =  this.data[i].charCodeAt(0).<span class="keyword">toString</span>(2)</span><br><span class="line">				enBin.length&gt;7?enBin=enBin</span><br><span class="line">							:enBin.length&gt;6?enBin = <span class="string">"0"</span>+enBin</span><br><span class="line">							:enBin =<span class="string">"00"</span>+enBin</span><br><span class="line">				<span class="keyword">sum</span>=<span class="keyword">sum</span>+enBin</span><br><span class="line">				engIndex[enNo]=<span class="built_in">i</span></span><br><span class="line">				enNo++</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;	</span><br><span class="line">		<span class="keyword">return</span> &#123;</span><br><span class="line">			<span class="keyword">sum</span>:<span class="keyword">sum</span>,</span><br><span class="line">			enIndex:engIndex</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>第二阶段：IP置换</p>
 
       
     </div>
@@ -457,8 +453,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/01/21/2018，测试路上/" rel="next" title="2018，测试路上">
-                <i class="fa fa-chevron-left"></i> 2018，测试路上
+              <a href="/2018/03/26/基于PageObject设计模式的自动化测试实践/" rel="next" title="基于PageObject设计模式的自动化测试实践">
+                <i class="fa fa-chevron-left"></i> 基于PageObject设计模式的自动化测试实践
               </a>
             
           </div>
@@ -466,10 +462,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/03/24/修改next主题的主页内容-踩坑/" rel="prev" title="踩坑记--修改next主页的内容">
-                踩坑记--修改next主页的内容 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
