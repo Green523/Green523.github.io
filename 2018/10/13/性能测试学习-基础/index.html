@@ -112,7 +112,7 @@
 
 
 
-  <meta name="keywords" content="性能测试," />
+  <meta name="keywords" content="Web性能测试实战详解," />
 
 
 
@@ -124,16 +124,16 @@
 
 
 <meta name="description" content="Web应用的网站与一般的具有客户端的软件的不同：a)    Web应用更新后，用户可以马上看见更新的内容，而客户端产品在新版本未发布前只能使用旧版本功能。b)    网站主要以服务器为核心，软件主要运行在服务器上，然而客户端产品主要运行在用户电脑上。 软件危机：a)    软件需求的增长无法快速满足。b)    软件生产成本变高。c)    软件生产进度难以控制。d)    软件的用户需求不容">
-<meta name="keywords" content="性能测试">
+<meta name="keywords" content="Web性能测试实战详解">
 <meta property="og:type" content="article">
-<meta property="og:title" content="性能测试学习 -- 基础">
+<meta property="og:title" content="读“Web性能测试实战详解”总结 -- 基础部分">
 <meta property="og:url" content="https://green523.github.io/2018/10/13/性能测试学习-基础/index.html">
 <meta property="og:site_name" content="Green的博客站">
 <meta property="og:description" content="Web应用的网站与一般的具有客户端的软件的不同：a)    Web应用更新后，用户可以马上看见更新的内容，而客户端产品在新版本未发布前只能使用旧版本功能。b)    网站主要以服务器为核心，软件主要运行在服务器上，然而客户端产品主要运行在用户电脑上。 软件危机：a)    软件需求的增长无法快速满足。b)    软件生产成本变高。c)    软件生产进度难以控制。d)    软件的用户需求不容">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-13T07:44:38.342Z">
+<meta property="og:updated_time" content="2018-10-30T10:18:41.529Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="性能测试学习 -- 基础">
+<meta name="twitter:title" content="读“Web性能测试实战详解”总结 -- 基础部分">
 <meta name="twitter:description" content="Web应用的网站与一般的具有客户端的软件的不同：a)    Web应用更新后，用户可以马上看见更新的内容，而客户端产品在新版本未发布前只能使用旧版本功能。b)    网站主要以服务器为核心，软件主要运行在服务器上，然而客户端产品主要运行在用户电脑上。 软件危机：a)    软件需求的增长无法快速满足。b)    软件生产成本变高。c)    软件生产进度难以控制。d)    软件的用户需求不容">
 
 
@@ -170,7 +170,7 @@
 
 
 
-  <title>性能测试学习 -- 基础 | Green的博客站</title>
+  <title>读“Web性能测试实战详解”总结 -- 基础部分 | Green的博客站</title>
   
 
 
@@ -324,7 +324,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">性能测试学习 -- 基础</h1>
+          <h1 class="post-title" itemprop="name headline">读“Web性能测试实战详解”总结 -- 基础部分</h1>
         
 
         <div class="post-meta">
@@ -352,7 +352,7 @@
             
             <span class="post-meta-item-icon">
               
-                <a href="/tags/性能测试/" rel="tag"><i class="fa fa-tag"></i> 性能测试</a>
+                <a href="/tags/Web性能测试实战详解/" rel="tag"><i class="fa fa-tag"></i> Web性能测试实战详解</a>
               
             </span>
          
@@ -406,6 +406,8 @@
 <li>黑盒测试发现bug的类型：<br>a)    功能错误或遗漏<br>b)    界面错误<br>c)    数据结构或外部数据库访问错误<br>d)    性能错误<br>e)    初始化和终止错误</li>
 <li>黑盒测试的测试用例设计原则：<br>a)    测试覆盖率相同情况下，测试用例尽可能少（运行测试用例所花时间和成本就越少）<br>b)    现有的测试用例要达到越高的测试覆盖率越好</li>
 <li>黑盒测试的用例设计方法：<br>a)    等价类划分法：关注值域<br>b)    边界值分析法：关注不同值域之间的变化点<br>c)    错误推测法：关注代码变动和历史上bug出现最多的点<br>d)    因果图法：关注被测软件逻辑上的因果关系<br>e)    判定表驱动分析方法：关注被测软件中条件选择顺序<br>f)    正交实验设计方法<br>g)    功能图分析方法</li>
+<li>网页的功能测试：<br>首先观察网页中的包含的内容，如文本框，下拉菜单，文字链接等，然后测试这些元素的显示是否正常，功能是否实现。网页的功能测试需要验证：<br>a)    链接测试（后期详述）：文字或图片链接的有效性<br>b)    表单提交测试<br>c)    网页内容、用户界面和多语言测试<br>d)    浏览器交互测试，如修改浏览器选项设置，以发现当前网页的问题<br>e)    其他特殊功能的测试，如上传功能等</li>
+<li>网页测试考虑的其他方面：<br>a)    性能测试<br>b)    兼容性测试<br>c)    安全测试</li>
 </ol>
 
       
@@ -467,6 +469,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/10/23/读Web性能测试实战详解总结-测试方法/" rel="prev" title="读Web性能测试实战详解总结 -- 测试方法">
+                读Web性能测试实战详解总结 -- 测试方法 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -541,7 +547,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -554,7 +560,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

@@ -1,11 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[性能测试学习 -- 基础]]></title>
-    <url>%2F2018%2F10%2F13%2F%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95%E5%AD%A6%E4%B9%A0-%E5%9F%BA%E7%A1%80%2F</url>
-    <content type="text"><![CDATA[Web应用的网站与一般的具有客户端的软件的不同：a) Web应用更新后，用户可以马上看见更新的内容，而客户端产品在新版本未发布前只能使用旧版本功能。b) 网站主要以服务器为核心，软件主要运行在服务器上，然而客户端产品主要运行在用户电脑上。 软件危机：a) 软件需求的增长无法快速满足。b) 软件生产成本变高。c) 软件生产进度难以控制。d) 软件的用户需求不容易定义。e) 质量不易保证。f) 可维护性变差。 软件生命周期模型：a) 大爆炸模型（big-bang）b) 瀑布模型（waterfall）c) 螺旋模型（spiral）d) 边做边改模型（code and fix） 软件过程的几个阶段：a) 项目启动b) 项目设计c) 项目执行d) 项目竣工 软件发布的方式：a) RTM（ready to market）：光盘刻录b) RTW（ready to web）：在网络上提供下载链接c) RTO（ready to Operation）：在服务器上部署软件产品 Bug标准：a) 软件没有实现说明书中列出来的功能b) 软件出现了说明书中提到的不应出现的情况c) 软件中实现了说明书中没有的提到的功能d) 软件没有实现说明书中没有提到但应该实现的功能e) 软件难以学习，使用，运转速度慢，用户认为无法达到预期 黑盒测试发现bug的类型：a) 功能错误或遗漏b) 界面错误c) 数据结构或外部数据库访问错误d) 性能错误e) 初始化和终止错误 黑盒测试的测试用例设计原则：a) 测试覆盖率相同情况下，测试用例尽可能少（运行测试用例所花时间和成本就越少）b) 现有的测试用例要达到越高的测试覆盖率越好 黑盒测试的用例设计方法：a) 等价类划分法：关注值域b) 边界值分析法：关注不同值域之间的变化点c) 错误推测法：关注代码变动和历史上bug出现最多的点d) 因果图法：关注被测软件逻辑上的因果关系e) 判定表驱动分析方法：关注被测软件中条件选择顺序f) 正交实验设计方法g) 功能图分析方法]]></content>
+    <title><![CDATA[配置云服务器 -- 远程登录mysql]]></title>
+    <url>%2F2018%2F10%2F30%2F%E9%85%8D%E7%BD%AE%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8-%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95mysql%2F</url>
+    <content type="text"><![CDATA[Linux基础知识： Vim四个模式：1.正常模式（Normal-mode），默认进入此模式，此模式一般用于浏览文件，无法输入字符。按Esc键则进入该模式。2.插入模式（Insert-mode），可写入相应字符，在正常模式下按i，I，a，A等键可进入该模式。3.命令模式（Command-mode），执行一些输入并执行一些vim或插件提供的指令，在正常模式下，按：键可进入。4.可视模式（Visual-mode），正常模式下按v，V键可进入。保存并退出：按ESC后，按Shift+ZZ不保存退出：按ESC后，输入 :q! 云服务器配置之远程登陆mysql 安装mysql1# apt-get install mysql-server 查看是否安装成功，安装成功则为listen状态1# netstat -tap | grep mysql 修改配置文件在/etc/mysql目录下执行：12# cp /etc/my.cnf /etc/my.cnf_bk# vim my.cnf 在my.cnf文件中的 [mysqld]下：改：1bind-address = 0.0.0.0增加：12character_set_server = utf8Init_connect = ‘SET NAMES utf8’ 创建用户，并为用户授权进入mysql数据库，执行：1mysql&gt; create user ‘username' identified by 'password'； 创建用户1mysql&gt; grant all privileges on *.* to 'username' identified by 'password' with grant option; 授权1mysql&gt; flush privileges; 刷新权限 重启服务器登录云服务器，重启 远程访问验证：]]></content>
       <tags>
-        <tag>性能测试</tag>
+        <tag>云服务器</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[读Web性能测试实战详解总结 -- 基础部分2]]></title>
+    <url>%2F2018%2F10%2F30%2F%E8%AF%BBWeb%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95%E5%AE%9E%E6%88%98%E8%AF%A6%E8%A7%A3%E6%80%BB%E7%BB%93-%E5%9F%BA%E7%A1%80%E9%83%A8%E5%88%862%2F</url>
+    <content type="text"><![CDATA[性能：软硬件对于其提供的服务及时性，可用性要求的符合程度。 WEB性能：由于WEB应用时基于交互式的，所以web性能更偏向于对及时性的满足（即，服务要及时的给与用户请求的反馈）。Web的可用性，主要描述web应用在正常情况下最多能同时服务的用户数量，以及服务持续时间。 A) 响应时间：衡量及时性B) 最大并发用户数：衡量可用性，web应用在不出现系统崩溃时，所能同时提供的最大用户数量。Web性能测试的目的： 发现系统的代码缺陷：需要考虑性能变差是否由于web应用代码中的bug 发现系统的工作能力 发现系统性能优化的关键点影响web性能的重要硬件之一：cpu 装有64位cpu的电脑可以安装32位或64位操作系统，反之则不然。 Cpu主要由运算器、控制器、寄存器组和内部总线构成。 Cpu指标（服务器不是越贵越好，应根据其执行任务的类型）：a) Core speed：核心速度值越大越快，单位一般为Mhz。很多cpu会在系统不繁忙的时候降低速度运行以延长寿命，降低功耗。b) Multiplier：倍频指cpu核心速度与连接cpu和其他芯片之间数据线速度的比率c) Bus speed: 总线速度前端总线（和cpu连接）的速度d) 多核问题：多核cpu对于改善web性能很有好处，但是对于大规模单线程计算的应用来说，则比较浪费影响web性能的重要硬件之一：硬盘硬盘指标：a) 硬盘类型：硬盘采用什么方式存储数据，传输数据b) 硬盘转速：硬盘中碟片的转速c) 硬盘的缓存：大小代表硬盘为了读取速度更快而设置的缓存容量]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[配置云服务器 -- 升级pythoon版本]]></title>
+    <url>%2F2018%2F10%2F29%2F%E9%85%8D%E7%BD%AE%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8-%E5%8D%87%E7%BA%A7pythoon%E7%89%88%E6%9C%AC%2F</url>
+    <content type="text"><![CDATA[嵌入式基础知识： /是指根目录：就是所有目录最顶层的目录~是当前用户的主目录：如果是root用户就是/root/目录， 如果是其他用户就是/home/下用户名命名的用户 解压缩命令 tar-c: 压缩文件-x: 解压文件-z: 有gzip属性的-v: 显示所有过程-f: 使用档案名字 ./configure./configure 是用来检测你的安装平台的目标特征的。比如它会检测你是不是有CC或GCC，并不是需要CC或GCC，它是个shell脚本。一般用来生成 Makefile。 makemake 是用来编译的，它从Makefile中读取指令，然后编译。 make installmake install是用来安装的，它也从Makefile中读取指令，安装到指定的位置。 ls-l 列出文件的详细信息，如创建者，创建时间，文件的读写权限列表等等。-a 列出文件下所有的文件，包括以“.“开头的隐藏文件（linux下文件隐藏文件是以.开头的，如果存在..代表存在着父目录）。 grep(global search regular expression(RE) and print out the line,全面搜索正则表达式并把行打印出来) 是一种强大的文本搜索工具，它能使用正则表达式搜索文本，并把匹配的行打印出来。1# grep [-acinv] [--color=auto] '搜寻字符串' filename 选项与参数：-a ：将 binary 文件以 text 文件的方式搜寻数据-c ：计算找到 ‘搜寻字符串’ 的次数-i ：忽略大小写的不同，所以大小写视为相同-n ：顺便输出行号-v ：反向选择，亦即显示出没有 ‘搜寻字符串’ 内容的那一行–color=auto ：可以将找到的关键词部分加上颜色的显示 ln：为源文件在另外一个位置（目标路径下）建立一个同步的链接。注：链接有两种，一种被称为硬链接（Hard Link），另一种被称为符号链接（Symbolic Link）。建立硬链接时，链接文件和被链接文件必须位于同一个文件系统中，并且不能建立指向目录的硬链接。而对符号链接，则不存在这个问题。默认情况下，ln产生硬链接。用法：1# ln -s 源文件 目标文件 linux下文件的一些文件颜色的含义绿色—-&gt;代表可执行文件，红色—-&gt;代表压缩文件深蓝色—-&gt;代表目录浅蓝色—–&gt;代表链接文件灰色—-&gt;代表其它的一些文件 配置云服务器之升级python版本注：Linux服务器下安装python3.6.7版本（linux服务器本来有python3.4和python2.7版本，默认使用的是2.7版本）主要步骤：下载解压-配置-编译-安装-设置软链接1.下载安装包并解压官方网址：https://www.python.org/downloads/下载linux环境的安装包：Python-3.6.7.tgz，通过XFTP上传到云服务器的中的指定文件夹，我默认的是：/root/mypakage。1# tar –zxvf Python-3.6.7.tgz解压到当前路径 配置1# cd Python-3.6.7 进入到当前解压的文件夹1# ./configure 编译1# make 安装1# make install 设置软链接我的python3.6.7安装路径是 /usr/local/bin未设置软链接之前执行：1# ls –al /usr/bin | grep python 执行软链接：将usr/bin/python的连接指向usr/local/bin/python312# mv /usr/bin/python /usr/bin/python.bak# ln /usr/local/bin/python3 /usr/bin/python 软链接设置完成，查看链接：1# ls –al /usr/bin | grep python 验证结果：]]></content>
+      <tags>
+        <tag>云服务器</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[读Web性能测试实战详解总结 -- 测试方法]]></title>
+    <url>%2F2018%2F10%2F23%2F%E8%AF%BBWeb%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95%E5%AE%9E%E6%88%98%E8%AF%A6%E8%A7%A3%E6%80%BB%E7%BB%93-%E6%B5%8B%E8%AF%95%E6%96%B9%E6%B3%95%2F</url>
+    <content type="text"><![CDATA[Web性能测试的前提条件：A 一个稳定的Web应用版本B 性能测试所处的测试环境，必须独立于开发环境，并且尽可能类似于生产环境。 性能测试方法分类：a) 性能测试（performance testing）狭义上的一个测试方法，Web应用的性能测试方法，就是通过模拟若干用户对于网站的访问，获得性能计数器和其它指标的数据，再分析它们以进行性能评估。它是实时性能测试所必须进行的一种方法。b) 压力测试（stress testing）c) 负载测试 （load testing）d) 并发测试 （concurrency testing）e) 配置测试 （configuration testing）f) 耐久度测试 （endurance testing）g) 可靠性测试 （Reliability testing）h) 剑锋冲击测试 （spike testing）i) 失败恢复测试 （failover testing） 网站版本的选择：稳定的测试版本]]></content>
+      <tags>
+        <tag>Web性能测试实战详解</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[读“Web性能测试实战详解”总结 -- 基础部分]]></title>
+    <url>%2F2018%2F10%2F13%2F%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95%E5%AD%A6%E4%B9%A0-%E5%9F%BA%E7%A1%80%2F</url>
+    <content type="text"><![CDATA[Web应用的网站与一般的具有客户端的软件的不同：a) Web应用更新后，用户可以马上看见更新的内容，而客户端产品在新版本未发布前只能使用旧版本功能。b) 网站主要以服务器为核心，软件主要运行在服务器上，然而客户端产品主要运行在用户电脑上。 软件危机：a) 软件需求的增长无法快速满足。b) 软件生产成本变高。c) 软件生产进度难以控制。d) 软件的用户需求不容易定义。e) 质量不易保证。f) 可维护性变差。 软件生命周期模型：a) 大爆炸模型（big-bang）b) 瀑布模型（waterfall）c) 螺旋模型（spiral）d) 边做边改模型（code and fix） 软件过程的几个阶段：a) 项目启动b) 项目设计c) 项目执行d) 项目竣工 软件发布的方式：a) RTM（ready to market）：光盘刻录b) RTW（ready to web）：在网络上提供下载链接c) RTO（ready to Operation）：在服务器上部署软件产品 Bug标准：a) 软件没有实现说明书中列出来的功能b) 软件出现了说明书中提到的不应出现的情况c) 软件中实现了说明书中没有的提到的功能d) 软件没有实现说明书中没有提到但应该实现的功能e) 软件难以学习，使用，运转速度慢，用户认为无法达到预期 黑盒测试发现bug的类型：a) 功能错误或遗漏b) 界面错误c) 数据结构或外部数据库访问错误d) 性能错误e) 初始化和终止错误 黑盒测试的测试用例设计原则：a) 测试覆盖率相同情况下，测试用例尽可能少（运行测试用例所花时间和成本就越少）b) 现有的测试用例要达到越高的测试覆盖率越好 黑盒测试的用例设计方法：a) 等价类划分法：关注值域b) 边界值分析法：关注不同值域之间的变化点c) 错误推测法：关注代码变动和历史上bug出现最多的点d) 因果图法：关注被测软件逻辑上的因果关系e) 判定表驱动分析方法：关注被测软件中条件选择顺序f) 正交实验设计方法g) 功能图分析方法 网页的功能测试：首先观察网页中的包含的内容，如文本框，下拉菜单，文字链接等，然后测试这些元素的显示是否正常，功能是否实现。网页的功能测试需要验证：a) 链接测试（后期详述）：文字或图片链接的有效性b) 表单提交测试c) 网页内容、用户界面和多语言测试d) 浏览器交互测试，如修改浏览器选项设置，以发现当前网页的问题e) 其他特殊功能的测试，如上传功能等 网页测试考虑的其他方面：a) 性能测试b) 兼容性测试c) 安全测试]]></content>
+      <tags>
+        <tag>Web性能测试实战详解</tag>
       </tags>
   </entry>
   <entry>
