@@ -1,17 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[微信小程序学习 --添加tabBar]]></title>
+    <url>%2F2018%2F11%2F05%2F%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%20--%E6%B7%BB%E5%8A%A0tabBar%2F</url>
+    <content type="text"><![CDATA[目标效果:底部有三个选项卡，点击可切换，默认显示第一选项卡页面。 在pages路径下添加两个文件夹，文件名可自定义。一个文件就是一个页面 在app.json中的pages项添加1步骤添加的页面路径 在app.json中添加tabBar项。参考微信小程序app.json文档全局设置中的tabBar说明。123456789101112131415161718192021222324252627"tabBar":&#123; "color":"#888888", "selectedColor":"#27B126", "backgroundColor":"#FFFFF", "list":[ &#123; "pagePath":"pages/index/index", "text":"买买买", "iconPath":"uploads/mall.png", "selectedIconPath":"uploads/onmall.png" &#125;, &#123; "pagePath": "pages/buyor/buyor", "text": "购物车", "iconPath": "uploads/buyor.png", "selectedIconPath": "uploads/onbuyor.png" &#125;, &#123; "pagePath": "pages/pinfo/pinfo", "text": "我", "iconPath": "uploads/pinfo.png", "selectedIconPath": "uploads/onpinfo.png" &#125; ], "position":"bottom" &#125;, 注：list列表代表tab项，最少2个，最多5个。其中icon可到http://www.iconfont.cn/home/index?spm=a313x.7781069.1998910419.2 选择，官方建议大小是81*81，下载后可存入项目路径下自己另建的文件夹中。 保存，并查看模拟器效果。]]></content>
+      <tags>
+        <tag>微信小程序</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[django学习 --页面的数据交互]]></title>
+    <url>%2F2018%2F11%2F05%2Fdjango%E5%AD%A6%E4%B9%A0-%E9%A1%B5%E9%9D%A2%E7%9A%84%E6%95%B0%E6%8D%AE%E4%BA%A4%E4%BA%92%2F</url>
+    <content type="text"><![CDATA[从数据库取数据，并在页面显示示例： 从数据库取数据注：默认已经建好数据表，并且数据表中有数据打开view.py，在视图函数中，添加如下语句（goods在models.py中定义，通过import导入） 打开模板index.html，添加12345678&lt;p&gt;在售商品&lt;/p&gt;&#123;% if good %&#125; &#123;% for g in good %&#125; &lt;p&gt;商品名:&#123;&#123; g.good_name &#125;&#125;&amp;nbsp&amp;nbsp库存数量:&#123;&#123; g.good_num &#125;&#125;&amp;nbsp&amp;nbsp商品条码:&#123;&#123; g.good_code &#125;&#125;&lt;/p&gt; &#123;% endfor %&#125;&#123;% else %&#125; &lt;p&gt;暂无在架商品&lt;/p&gt;&#123;% endif %&#125; 在应用路径的urls.py中配置好url 打开cmd，在项目路径下运行1python manage.py runserver&#125; 验证结果：在浏览器中访问 127.0.0.1:8000/myPath 从页面提交数据到后台示例form表单： 页面效果如下， 代码如下： 配置路径在应用的urls.py文件中，加入路径1path('add2Buyor/', views.add2Buyor, name='add2Buyor'), 打开views.py文件，编写add2Buyor函数 注：在表单页面中需要加上1&#123;% csrf_token %&#125;，并将提交的视图函数上加上@csrf_exempt装饰器，否则会报错跨站请求 在模板文件中添加addSuccess.html 验证访问表单页面，输入数量，点击加入购物车]]></content>
+      <tags>
+        <tag>django</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[django学习 --简单使用]]></title>
+    <url>%2F2018%2F11%2F01%2Fdjango%E5%AD%A6%E4%B9%A0-%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8%2F</url>
+    <content type="text"><![CDATA[基础知识 查看django版本1python -m django --version 创建django项目在项目路径下，执行如下命令，会创建一个名为mall的文件夹1django-admin startproject mall 其目录结构为mall文件夹（最外层）：项目容器，不影响django，可随意重命名；manage.py：用在命令行中，见https://docs.djangoproject.com/en/2.1/ref/django-admin/mall文件夹（内层）：实际上是一个python的包，包名就是项目名，包名可以用于引用里面的脚本，例如，mall.urls;init.py：空文件，指示该python包中的脚本可被搜索，导入引用；settings.py：配置文件，见：https://docs.djangoproject.com/en/2.1/topics/settings/urls.py：URLConf设置，详情见：https://docs.djangoproject.com/en/2.1/topics/http/urls/wsgi.py：兼容WSGI的设置，详情见：https://docs.djangoproject.com/en/2.1/howto/deployment/wsgi/ 验证项目是否成功工作在外层mall路径下执行（需要调用manage.py脚本）1python manage.py runserver成功访问127.0.0.1:8000，显示django的小火箭的话，就创建成功了。 创建应用1python manage.py startapp shopping 创建了一个名为shopping的应用，目录结构为 注：项目下可以有多个应用migrations文件夹：记录每一次数据迁移的变化models.py：应用的数据模型定义views.py：写用于设计应用的响应以及返回结果 在应用文件路径下添加Templates文件夹Templates文件夹中存放一些页面文件，例如html页面 简单使用定义数据模型： 修改默认数据库注：我使用的是mysql数据库，并已成功安装环境。django默认使用的是sqlite。打开项目路径下的settings.py，修改如下 执行python manage.py migrate 在shopping应用的models.py定义数据字段。例如： 注册应用打开settings.py，在INSTALLED_APPS列表中添加值‘DjangoAPP.apps.appConfig’,其中，appConfig为django应用apps.py文件中Class名 执行1python manage.py makemigrations appname migrations是记录模型的改变，可在迁移文件中看到python manage.py migratemigrate是将改变应用于数据库 创建模板与视图 向Templates文件夹中添加一个页面文件（index.html） 打开应用路径下的views.py，添加如下函数12345from django.shortcuts import render# Create your views here.def index(request): return render(request, 'index.html') 配置应用路径打开项目路径（mall）下的urls.py文件，添加路径1path('shopping/', include('shopping.urls')), 在应用路径（mall/shopping）下，添加文件urls.py，并按如下填写注：我的应用名为shopping，项目名为mall123456from django.urls import pathfrom . import viewsurlpatterns = [ path('', views.index, name='index'),] 验证在cmd的项目路径中运行：1python manage.py runserver 打开浏览器访问：127.0.0.1:8000/shopping url配置成功。]]></content>
+      <tags>
+        <tag>django</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[配置云服务器 -- 远程登录mysql]]></title>
     <url>%2F2018%2F10%2F30%2F%E9%85%8D%E7%BD%AE%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8-%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95mysql%2F</url>
     <content type="text"><![CDATA[Linux基础知识： Vim四个模式：1.正常模式（Normal-mode），默认进入此模式，此模式一般用于浏览文件，无法输入字符。按Esc键则进入该模式。2.插入模式（Insert-mode），可写入相应字符，在正常模式下按i，I，a，A等键可进入该模式。3.命令模式（Command-mode），执行一些输入并执行一些vim或插件提供的指令，在正常模式下，按：键可进入。4.可视模式（Visual-mode），正常模式下按v，V键可进入。保存并退出：按ESC后，按Shift+ZZ不保存退出：按ESC后，输入 :q! 云服务器配置之远程登陆mysql 安装mysql1# apt-get install mysql-server 查看是否安装成功，安装成功则为listen状态1# netstat -tap | grep mysql 修改配置文件在/etc/mysql目录下执行：12# cp /etc/my.cnf /etc/my.cnf_bk# vim my.cnf 在my.cnf文件中的 [mysqld]下：改：1bind-address = 0.0.0.0增加：12character_set_server = utf8Init_connect = ‘SET NAMES utf8’ 创建用户，并为用户授权进入mysql数据库，执行：1mysql&gt; create user ‘username' identified by 'password'； 创建用户1mysql&gt; grant all privileges on *.* to 'username' identified by 'password' with grant option; 授权1mysql&gt; flush privileges; 刷新权限 重启服务器登录云服务器，重启 远程访问验证：]]></content>
       <tags>
         <tag>云服务器</tag>
       </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[读Web性能测试实战详解总结 -- 基础部分2]]></title>
-    <url>%2F2018%2F10%2F30%2F%E8%AF%BBWeb%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95%E5%AE%9E%E6%88%98%E8%AF%A6%E8%A7%A3%E6%80%BB%E7%BB%93-%E5%9F%BA%E7%A1%80%E9%83%A8%E5%88%862%2F</url>
-    <content type="text"><![CDATA[性能：软硬件对于其提供的服务及时性，可用性要求的符合程度。 WEB性能：由于WEB应用时基于交互式的，所以web性能更偏向于对及时性的满足（即，服务要及时的给与用户请求的反馈）。Web的可用性，主要描述web应用在正常情况下最多能同时服务的用户数量，以及服务持续时间。 A) 响应时间：衡量及时性B) 最大并发用户数：衡量可用性，web应用在不出现系统崩溃时，所能同时提供的最大用户数量。Web性能测试的目的： 发现系统的代码缺陷：需要考虑性能变差是否由于web应用代码中的bug 发现系统的工作能力 发现系统性能优化的关键点影响web性能的重要硬件之一：cpu 装有64位cpu的电脑可以安装32位或64位操作系统，反之则不然。 Cpu主要由运算器、控制器、寄存器组和内部总线构成。 Cpu指标（服务器不是越贵越好，应根据其执行任务的类型）：a) Core speed：核心速度值越大越快，单位一般为Mhz。很多cpu会在系统不繁忙的时候降低速度运行以延长寿命，降低功耗。b) Multiplier：倍频指cpu核心速度与连接cpu和其他芯片之间数据线速度的比率c) Bus speed: 总线速度前端总线（和cpu连接）的速度d) 多核问题：多核cpu对于改善web性能很有好处，但是对于大规模单线程计算的应用来说，则比较浪费影响web性能的重要硬件之一：硬盘硬盘指标：a) 硬盘类型：硬盘采用什么方式存储数据，传输数据b) 硬盘转速：硬盘中碟片的转速c) 硬盘的缓存：大小代表硬盘为了读取速度更快而设置的缓存容量]]></content>
   </entry>
   <entry>
     <title><![CDATA[配置云服务器 -- 升级pythoon版本]]></title>
@@ -22,7 +41,7 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[读Web性能测试实战详解总结 -- 测试方法]]></title>
+    <title><![CDATA[读"Web性能测试实战详解"总结 -- 测试方法]]></title>
     <url>%2F2018%2F10%2F23%2F%E8%AF%BBWeb%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95%E5%AE%9E%E6%88%98%E8%AF%A6%E8%A7%A3%E6%80%BB%E7%BB%93-%E6%B5%8B%E8%AF%95%E6%96%B9%E6%B3%95%2F</url>
     <content type="text"><![CDATA[Web性能测试的前提条件：A 一个稳定的Web应用版本B 性能测试所处的测试环境，必须独立于开发环境，并且尽可能类似于生产环境。 性能测试方法分类：a) 性能测试（performance testing）狭义上的一个测试方法，Web应用的性能测试方法，就是通过模拟若干用户对于网站的访问，获得性能计数器和其它指标的数据，再分析它们以进行性能评估。它是实时性能测试所必须进行的一种方法。b) 压力测试（stress testing）c) 负载测试 （load testing）d) 并发测试 （concurrency testing）e) 配置测试 （configuration testing）f) 耐久度测试 （endurance testing）g) 可靠性测试 （Reliability testing）h) 剑锋冲击测试 （spike testing）i) 失败恢复测试 （failover testing） 网站版本的选择：稳定的测试版本]]></content>
       <tags>
@@ -30,8 +49,16 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[读“Web性能测试实战详解”总结 -- 基础部分]]></title>
-    <url>%2F2018%2F10%2F13%2F%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95%E5%AD%A6%E4%B9%A0-%E5%9F%BA%E7%A1%80%2F</url>
+    <title><![CDATA[读Web性能测试实战详解总结 -- 基础部分2]]></title>
+    <url>%2F2018%2F10%2F21%2F%E8%AF%BBWeb%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95%E5%AE%9E%E6%88%98%E8%AF%A6%E8%A7%A3%E6%80%BB%E7%BB%93-%E5%9F%BA%E7%A1%80%E9%83%A8%E5%88%862%2F</url>
+    <content type="text"><![CDATA[性能：软硬件对于其提供的服务及时性，可用性要求的符合程度。 WEB性能：由于WEB应用时基于交互式的，所以web性能更偏向于对及时性的满足（即，服务要及时的给与用户请求的反馈）。Web的可用性，主要描述web应用在正常情况下最多能同时服务的用户数量，以及服务持续时间。 A) 响应时间：衡量及时性B) 最大并发用户数：衡量可用性，web应用在不出现系统崩溃时，所能同时提供的最大用户数量。Web性能测试的目的： 发现系统的代码缺陷：需要考虑性能变差是否由于web应用代码中的bug 发现系统的工作能力 发现系统性能优化的关键点影响web性能的重要硬件之一：cpu 装有64位cpu的电脑可以安装32位或64位操作系统，反之则不然。 Cpu主要由运算器、控制器、寄存器组和内部总线构成。 Cpu指标（服务器不是越贵越好，应根据其执行任务的类型）：a) Core speed：核心速度值越大越快，单位一般为Mhz。很多cpu会在系统不繁忙的时候降低速度运行以延长寿命，降低功耗。b) Multiplier：倍频指cpu核心速度与连接cpu和其他芯片之间数据线速度的比率c) Bus speed: 总线速度前端总线（和cpu连接）的速度d) 多核问题：多核cpu对于改善web性能很有好处，但是对于大规模单线程计算的应用来说，则比较浪费影响web性能的重要硬件之一：硬盘硬盘指标：a) 硬盘类型：硬盘采用什么方式存储数据，传输数据b) 硬盘转速：硬盘中碟片的转速c) 硬盘的缓存：大小代表硬盘为了读取速度更快而设置的缓存容量]]></content>
+      <tags>
+        <tag>Web性能测试实战详解</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[读“Web性能测试实战详解”总结 -- 基础部分1]]></title>
+    <url>%2F2018%2F10%2F13%2F%E8%AF%BBWeb%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95%E5%AE%9E%E6%88%98%E8%AF%A6%E8%A7%A3%E6%80%BB%E7%BB%93%20--%20%E5%9F%BA%E7%A1%80%E9%83%A8%E5%88%861%2F</url>
     <content type="text"><![CDATA[Web应用的网站与一般的具有客户端的软件的不同：a) Web应用更新后，用户可以马上看见更新的内容，而客户端产品在新版本未发布前只能使用旧版本功能。b) 网站主要以服务器为核心，软件主要运行在服务器上，然而客户端产品主要运行在用户电脑上。 软件危机：a) 软件需求的增长无法快速满足。b) 软件生产成本变高。c) 软件生产进度难以控制。d) 软件的用户需求不容易定义。e) 质量不易保证。f) 可维护性变差。 软件生命周期模型：a) 大爆炸模型（big-bang）b) 瀑布模型（waterfall）c) 螺旋模型（spiral）d) 边做边改模型（code and fix） 软件过程的几个阶段：a) 项目启动b) 项目设计c) 项目执行d) 项目竣工 软件发布的方式：a) RTM（ready to market）：光盘刻录b) RTW（ready to web）：在网络上提供下载链接c) RTO（ready to Operation）：在服务器上部署软件产品 Bug标准：a) 软件没有实现说明书中列出来的功能b) 软件出现了说明书中提到的不应出现的情况c) 软件中实现了说明书中没有的提到的功能d) 软件没有实现说明书中没有提到但应该实现的功能e) 软件难以学习，使用，运转速度慢，用户认为无法达到预期 黑盒测试发现bug的类型：a) 功能错误或遗漏b) 界面错误c) 数据结构或外部数据库访问错误d) 性能错误e) 初始化和终止错误 黑盒测试的测试用例设计原则：a) 测试覆盖率相同情况下，测试用例尽可能少（运行测试用例所花时间和成本就越少）b) 现有的测试用例要达到越高的测试覆盖率越好 黑盒测试的用例设计方法：a) 等价类划分法：关注值域b) 边界值分析法：关注不同值域之间的变化点c) 错误推测法：关注代码变动和历史上bug出现最多的点d) 因果图法：关注被测软件逻辑上的因果关系e) 判定表驱动分析方法：关注被测软件中条件选择顺序f) 正交实验设计方法g) 功能图分析方法 网页的功能测试：首先观察网页中的包含的内容，如文本框，下拉菜单，文字链接等，然后测试这些元素的显示是否正常，功能是否实现。网页的功能测试需要验证：a) 链接测试（后期详述）：文字或图片链接的有效性b) 表单提交测试c) 网页内容、用户界面和多语言测试d) 浏览器交互测试，如修改浏览器选项设置，以发现当前网页的问题e) 其他特殊功能的测试，如上传功能等 网页测试考虑的其他方面：a) 性能测试b) 兼容性测试c) 安全测试]]></content>
       <tags>
         <tag>Web性能测试实战详解</tag>
@@ -67,14 +94,6 @@
     <content type="text"><![CDATA[我一直都想要做一个人博客。不久前，朋友推荐我来玩玩hexo，之后我就开始了自己的踩坑之旅……其实我用github+hexo搭建个人网站的时候挺顺利的，重在我修改next主题的默认样式以及加入小功能的时候，感觉有点费力。今天呢，我想讲讲我昨天是怎么把音乐给折腾出来的。在我想要给我的博客加入音乐的时候，就搜罗了网上的解决办法，一种是用网易云音乐生成iframe插件,直接复制对应歌曲下方的html代码,然后放在你想要播放音乐的页面一种是用hexo的音乐播放插件Aplayer，附上你的音乐外链。我是采用的第二种但是做这个音乐与图片外链，昨天折腾了我一下午。我在网上百度了很多方法，用qq邮箱，百度云，音乐分享的链接都没成功，去了七牛云注册又不想去实名认证，所以不能用。伤心三秒，想到了之前我给博客加入评论系统的时候，使用的leancloud，完美解决了图片与音乐外链问题。直接上方法了……leancloud看官网介绍，它是国内的一个BaaS(翻译:后端即服务：Backend as a Service)供应商，提供后台云服务。反正对于我的理解就是，可以让它当我的个人博客的一个后台，可以为我存储数据，做统计分析等等第一步：去leancloud官网，注册,选择个人用户，开发版的是免费的。第二步：登录你的leancloud账号，点击创建应用第三步：到你创建的应用里面去，点击存储，见下图，点击_File，点击上传，找到你下载好的音乐文件和你的音乐图片(图片大概70×70就够了)上传上去就行了。将列表向后拉，便可以看到对应音乐和图片的url链接啦在这里特别说明一下，有时候可能由于网络的原因，上传后音乐文件可能没有及时显示，如果你在列表中没看见你上传的文件，可以手动刷新试试。第四步: 在你想要加入音乐播放器的页面，可复制如下代码1&#123;% aplayer "可以了" "陈奕迅" "https://xxx.xxx.com/92b3af330d2274b1fa55.mp3" "https://xxx.xxx.com/xx.png" "autoplay" %&#125;如果你想放一个音乐list的话可以将上面代码换成1&#123;% aplayerlist %&#125;&#123;"narrow": false,"autoplay": true,"showlrc": 3,"mode": "random","music": [&#123;"title": "美好事物","author": "房东的猫","url": "http://xxx.xxx.com/945198c4909674765644.mp3","pic": "http://xxx.xxx.com/6e0e9e63cb0733f7ff12.png","lrc": ""&#125;,&#123;"title": "尚好的青春","author": "云の泣","url": "http://xxx.xxx.com/5b42b829b8ae08ccabe0.mp3","pic": "http://xxx.xxx.com/889df742eca5261f2fc5.png","lrc": ""&#125;,&#123;"title": "预谋邂逅","author": "阿肆","url": "http://xxx.xxx.com/1bd4f91441982710bcad.mp3","pic": "http://xxx.xxx.com/f72d61579f74d4ff9ce0.png","lrc": ""&#125;]&#125;&#123;% endaplayerlist %&#125;效果如下：PS：如果上面的步骤你都做好了，但是音乐不能播放，显示error happen的话，应该是你的音乐文件有问题，可以去leancloud点击一下你的音乐文件试试能否播放。]]></content>
       <tags>
         <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[2018，测试路上]]></title>
-    <url>%2F2018%2F01%2F21%2F2018%EF%BC%8C%E6%B5%8B%E8%AF%95%E8%B7%AF%E4%B8%8A%2F</url>
-    <content type="text"><![CDATA[当你的工作在你心中有意义，你就有成就感。 当你的工作给你时间，不剥夺你的生活，你就有尊严。 成就感和尊严，给你快乐。 var options = {"narrow":false,"autoplay":true,"showlrc":0,"listmaxheight":"0px","preload":"metadata","mode":"order","music":[{"title":"美好事物","author":"房东的猫","url":"http://ac-gwdwprl2.clouddn.com/945198c4909674765644.mp3","pic":"http://ac-gwdwprl2.clouddn.com/6e0e9e63cb0733f7ff12.png","lrc":""},{"title":"尚好的青春","author":"云の泣","url":"http://ac-gwdwprl2.clouddn.com/5b42b829b8ae08ccabe0.mp3","pic":"http://ac-gwdwprl2.clouddn.com/889df742eca5261f2fc5.png","lrc":""},{"title":"预谋邂逅","author":"阿肆","url":"http://ac-gwdwprl2.clouddn.com/1bd4f91441982710bcad.mp3","pic":"http://ac-gwdwprl2.clouddn.com/f72d61579f74d4ff9ce0.png","lrc":""}]}; options.element = document.getElementById("aplayer0"); var ap = new APlayer(options); window.aplayers || (window.aplayers = []); window.aplayers.push(ap); 人生该当多读书。我待在学校的日子约莫有20年，同桌渐渐变成过去的同学，再变成街上熟悉的陌生人。时间和环境改变了聊天共同话题。记得在初中老师的办公室里，班主任曾经用真彩牌的中性笔写下我信誓旦旦说下的宏伟志愿，将来当一名法官。记得高中文理分班时，家人和老师语重心长的建议我理科的就业好，择业范围广。就这样我正儿八经的从高二理科班读到了现在研二，整整八年。2018已来，19不远了，我快毕业了。在过去的一两年里，我一直以为自己会从事开发，也以开发标准去培养自己，现在却对测试行业产生了极大的兴趣。这可能是我比较爱好”检查作业”，也或许我比较爱好找茬，却没练来一张能怒怼的嘴巴吧。但是，就我去实习的两家软件测试岗位来看，测试人员质量和数量都不够，而且大多数公司还不重视测试人员的能力培养，很多从事手工测试的测试人员对所测试的产品业务熟悉，却没有编程的能力。还有一部分公司对测试人员的业务能力要求真的低，仅跑跑正常流程，对于软件呈现出的数据意义理解不做要求。更甚的是公司的部分开发人员对于测试出的缺陷不仅不改，也不和测试沟通，还质疑为什么要输入这些奇怪的数据，从而大骂测试人员是智障……我感觉有点淡淡的忧伤，毕竟以后要靠它吃饭,也还要靠它快乐并且有尊严的活着。现实让我不得不对测试开发职位职责做出思考。环境与实践经验让我觉得，测试是要求综合素质比较高的，是一门很深的学问。从我目前实习三多个月的经验以及自学的各种测试工具及应用来看：软件测试 ≈ 测试基本理论的应用能力 + 能快速理解被测对象的业务能力 + 测试工具学习的使用能力 + 与程序员有效的沟通能力测试基本理论的应用能力：测试要求最大可能的找出软件缺陷，所以一个具有软件开发常识的测试人员要对开发功能做全面的熟悉，利用测试方法，用例设计方法，针对软件的功能，在相对短的时间内最快最多的去找软件的缺陷，判断缺陷严重程度。不同业务模型的软件，测试什么，怎么测最有效。所以测试基本理论的应用能力应该成为测试人员的基本品质。测试人员的业务能力：测试人员有个很重要却少有人具备的作用，就是根据被测对象，在软件设计上提出一些能规避风险的意见与建议。要能提出有建设性的意见或建议，不熟悉软件的使用人群，软件的业务流程，软件所属行业的基本背景知识，是站不出来指点江山的。在这一点上，产品经常弥补了测试人员的业务能力不足。比如我第一家实习的公司对于新增的需求在设计方面，通常都是CTO和产品交流最多。至于后面两个，工具的使用能力与沟通能力，不用说都知道，在自动化测试盛行的趋势下，测试人员同样需要具备开发的编程能力，并需要利用各种软件去节省自己有限的时间与精力。在沟通能力上，经常有人说，测试就是一块砖，哪里需要哪里搬，这个其实说明了测试人员其实大多数都是上下游走的，需要向上级说明测试进度，测试结果，并接收上级派下的任务。发现bug了，也需要让程序员能听懂问题并能立马找问题出现的地方。所以有效沟通节约了时间成本。以上不过是我测试路上的一些感受，并发点牢骚，欢迎交流。2018.3.17]]></content>
-      <tags>
-        <tag>测试感悟</tag>
       </tags>
   </entry>
 </search>
