@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title><![CDATA[踩坑记-博客绑定域名]]></title>
-    <url>%2Fhome%2F2018%2F12%2F31%2F%E8%B8%A9%E5%9D%91%E8%AE%B0-%E5%8D%9A%E5%AE%A2%E7%BB%91%E5%AE%9A%E5%9F%9F%E5%90%8D%2F</url>
+    <url>%2F2018%2F12%2F31%2F%E8%B8%A9%E5%9D%91%E8%AE%B0-%E5%8D%9A%E5%AE%A2%E7%BB%91%E5%AE%9A%E5%9F%9F%E5%90%8D%2F</url>
     <content type="text"><![CDATA[之前用github和hexo搭建了一个我自己的博客。用https://green523.github.io 能成功访问。然后我又买了一个域名 www.zwenXXX.com ，想绑定到我的博客地址上。如下为操作步骤： 在博客的站点文件下找到source文件夹，在其下添加CNAME文件CNAME中添加你的域名信息，注意不要前面的协议头 执行1234&#123;% block content %&#125;Hexo dHexo g&#123;% endblock %&#125; 添加解析我是在腾讯云上买的域名，点击解析，添加解析记录，如图我添加的二级域名 然后等待它生效。由于我添加的是二级域名，期间可以不断访问blog.zwen523.com，查看是否生效。如果第二天还是访问不了，可能就是出问题了，需要排查。我的是等了一下午，晚上访问的时候生效的。]]></content>
       <tags>
         <tag>hexo</tag>
@@ -10,7 +10,7 @@
   </entry>
   <entry>
     <title><![CDATA[微信小程序学习 --添加tabBar]]></title>
-    <url>%2Fhome%2F2018%2F11%2F05%2F%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%20--%E6%B7%BB%E5%8A%A0tabBar%2F</url>
+    <url>%2F2018%2F11%2F05%2F%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%20--%E6%B7%BB%E5%8A%A0tabBar%2F</url>
     <content type="text"><![CDATA[目标效果:底部有三个选项卡，点击可切换，默认显示第一选项卡页面。 在pages路径下添加两个文件夹，文件名可自定义。一个文件就是一个页面 在app.json中的pages项添加1步骤添加的页面路径 在app.json中添加tabBar项。参考微信小程序app.json文档全局设置中的tabBar说明。123456789101112131415161718192021222324252627"tabBar":&#123; "color":"#888888", "selectedColor":"#27B126", "backgroundColor":"#FFFFF", "list":[ &#123; "pagePath":"pages/index/index", "text":"买买买", "iconPath":"uploads/mall.png", "selectedIconPath":"uploads/onmall.png" &#125;, &#123; "pagePath": "pages/buyor/buyor", "text": "购物车", "iconPath": "uploads/buyor.png", "selectedIconPath": "uploads/onbuyor.png" &#125;, &#123; "pagePath": "pages/pinfo/pinfo", "text": "我", "iconPath": "uploads/pinfo.png", "selectedIconPath": "uploads/onpinfo.png" &#125; ], "position":"bottom" &#125;, 注：list列表代表tab项，最少2个，最多5个。其中icon可到http://www.iconfont.cn/home/index?spm=a313x.7781069.1998910419.2 选择，官方建议大小是81*81，下载后可存入项目路径下自己另建的文件夹中。 保存，并查看模拟器效果。]]></content>
       <tags>
         <tag>微信小程序</tag>
@@ -18,7 +18,7 @@
   </entry>
   <entry>
     <title><![CDATA[django学习 --页面的数据交互]]></title>
-    <url>%2Fhome%2F2018%2F11%2F05%2Fdjango%E5%AD%A6%E4%B9%A0-%E9%A1%B5%E9%9D%A2%E7%9A%84%E6%95%B0%E6%8D%AE%E4%BA%A4%E4%BA%92%2F</url>
+    <url>%2F2018%2F11%2F05%2Fdjango%E5%AD%A6%E4%B9%A0-%E9%A1%B5%E9%9D%A2%E7%9A%84%E6%95%B0%E6%8D%AE%E4%BA%A4%E4%BA%92%2F</url>
     <content type="text"><![CDATA[从数据库取数据，并在页面显示示例： 从数据库取数据注：默认已经建好数据表，并且数据表中有数据打开view.py，在视图函数中，添加如下语句（goods在models.py中定义，通过import导入） 打开模板index.html，添加12345678&lt;p&gt;在售商品&lt;/p&gt;&#123;% if good %&#125; &#123;% for g in good %&#125; &lt;p&gt;商品名:&#123;&#123; g.good_name &#125;&#125;&amp;nbsp&amp;nbsp库存数量:&#123;&#123; g.good_num &#125;&#125;&amp;nbsp&amp;nbsp商品条码:&#123;&#123; g.good_code &#125;&#125;&lt;/p&gt; &#123;% endfor %&#125;&#123;% else %&#125; &lt;p&gt;暂无在架商品&lt;/p&gt;&#123;% endif %&#125; 在应用路径的urls.py中配置好url 打开cmd，在项目路径下运行1python manage.py runserver&#125; 验证结果：在浏览器中访问 127.0.0.1:8000/myPath 从页面提交数据到后台示例form表单： 页面效果如下， 代码如下： 配置路径在应用的urls.py文件中，加入路径1path('add2Buyor/', views.add2Buyor, name='add2Buyor'), 打开views.py文件，编写add2Buyor函数 注：在表单页面中需要加上1&#123;% csrf_token %&#125;，并将提交的视图函数上加上@csrf_exempt装饰器，否则会报错跨站请求 在模板文件中添加addSuccess.html 验证访问表单页面，输入数量，点击加入购物车]]></content>
       <tags>
         <tag>django</tag>
@@ -26,7 +26,7 @@
   </entry>
   <entry>
     <title><![CDATA[django学习 --简单使用]]></title>
-    <url>%2Fhome%2F2018%2F11%2F01%2Fdjango%E5%AD%A6%E4%B9%A0-%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8%2F</url>
+    <url>%2F2018%2F11%2F01%2Fdjango%E5%AD%A6%E4%B9%A0-%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8%2F</url>
     <content type="text"><![CDATA[基础知识 查看django版本1python -m django --version 创建django项目在项目路径下，执行如下命令，会创建一个名为mall的文件夹1django-admin startproject mall 其目录结构为mall文件夹（最外层）：项目容器，不影响django，可随意重命名；manage.py：用在命令行中，见https://docs.djangoproject.com/en/2.1/ref/django-admin/mall文件夹（内层）：实际上是一个python的包，包名就是项目名，包名可以用于引用里面的脚本，例如，mall.urls;init.py：空文件，指示该python包中的脚本可被搜索，导入引用；settings.py：配置文件，见：https://docs.djangoproject.com/en/2.1/topics/settings/urls.py：URLConf设置，详情见：https://docs.djangoproject.com/en/2.1/topics/http/urls/wsgi.py：兼容WSGI的设置，详情见：https://docs.djangoproject.com/en/2.1/howto/deployment/wsgi/ 验证项目是否成功工作在外层mall路径下执行（需要调用manage.py脚本）1python manage.py runserver成功访问127.0.0.1:8000，显示django的小火箭的话，就创建成功了。 创建应用1python manage.py startapp shopping 创建了一个名为shopping的应用，目录结构为 注：项目下可以有多个应用migrations文件夹：记录每一次数据迁移的变化models.py：应用的数据模型定义views.py：写用于设计应用的响应以及返回结果 在应用文件路径下添加Templates文件夹Templates文件夹中存放一些页面文件，例如html页面 简单使用定义数据模型： 修改默认数据库注：我使用的是mysql数据库，并已成功安装环境。django默认使用的是sqlite。打开项目路径下的settings.py，修改如下 执行python manage.py migrate 在shopping应用的models.py定义数据字段。例如： 注册应用打开settings.py，在INSTALLED_APPS列表中添加值‘DjangoAPP.apps.appConfig’,其中，appConfig为django应用apps.py文件中Class名 执行1python manage.py makemigrations appname migrations是记录模型的改变，可在迁移文件中看到python manage.py migratemigrate是将改变应用于数据库 创建模板与视图 向Templates文件夹中添加一个页面文件（index.html） 打开应用路径下的views.py，添加如下函数12345from django.shortcuts import render# Create your views here.def index(request): return render(request, 'index.html') 配置应用路径打开项目路径（mall）下的urls.py文件，添加路径1path('shopping/', include('shopping.urls')), 在应用路径（mall/shopping）下，添加文件urls.py，并按如下填写注：我的应用名为shopping，项目名为mall123456from django.urls import pathfrom . import viewsurlpatterns = [ path('', views.index, name='index'),] 验证在cmd的项目路径中运行：1python manage.py runserver 打开浏览器访问：127.0.0.1:8000/shopping url配置成功。]]></content>
       <tags>
         <tag>django</tag>
@@ -34,7 +34,7 @@
   </entry>
   <entry>
     <title><![CDATA[配置云服务器 -- 远程登录mysql]]></title>
-    <url>%2Fhome%2F2018%2F10%2F30%2F%E9%85%8D%E7%BD%AE%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8-%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95mysql%2F</url>
+    <url>%2F2018%2F10%2F30%2F%E9%85%8D%E7%BD%AE%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8-%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95mysql%2F</url>
     <content type="text"><![CDATA[Linux基础知识： Vim四个模式：1.正常模式（Normal-mode），默认进入此模式，此模式一般用于浏览文件，无法输入字符。按Esc键则进入该模式。2.插入模式（Insert-mode），可写入相应字符，在正常模式下按i，I，a，A等键可进入该模式。3.命令模式（Command-mode），执行一些输入并执行一些vim或插件提供的指令，在正常模式下，按：键可进入。4.可视模式（Visual-mode），正常模式下按v，V键可进入。保存并退出：按ESC后，按Shift+ZZ不保存退出：按ESC后，输入 :q! 云服务器配置之远程登陆mysql 安装mysql1# apt-get install mysql-server 查看是否安装成功，安装成功则为listen状态1# netstat -tap | grep mysql 修改配置文件在/etc/mysql目录下执行：12# cp /etc/my.cnf /etc/my.cnf_bk# vim my.cnf 在my.cnf文件中的 [mysqld]下：改：1bind-address = 0.0.0.0增加：12character_set_server = utf8Init_connect = ‘SET NAMES utf8’ 创建用户，并为用户授权进入mysql数据库，执行：1mysql&gt; create user ‘username' identified by 'password'； 创建用户1mysql&gt; grant all privileges on *.* to 'username' identified by 'password' with grant option; 授权1mysql&gt; flush privileges; 刷新权限 重启服务器登录云服务器，重启 远程访问验证：]]></content>
       <tags>
         <tag>云服务器</tag>
@@ -42,7 +42,7 @@
   </entry>
   <entry>
     <title><![CDATA[配置云服务器 -- 升级pythoon版本]]></title>
-    <url>%2Fhome%2F2018%2F10%2F29%2F%E9%85%8D%E7%BD%AE%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8-%E5%8D%87%E7%BA%A7pythoon%E7%89%88%E6%9C%AC%2F</url>
+    <url>%2F2018%2F10%2F29%2F%E9%85%8D%E7%BD%AE%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8-%E5%8D%87%E7%BA%A7pythoon%E7%89%88%E6%9C%AC%2F</url>
     <content type="text"><![CDATA[嵌入式基础知识： /是指根目录：就是所有目录最顶层的目录~是当前用户的主目录：如果是root用户就是/root/目录， 如果是其他用户就是/home/下用户名命名的用户 解压缩命令 tar-c: 压缩文件-x: 解压文件-z: 有gzip属性的-v: 显示所有过程-f: 使用档案名字 ./configure./configure 是用来检测你的安装平台的目标特征的。比如它会检测你是不是有CC或GCC，并不是需要CC或GCC，它是个shell脚本。一般用来生成 Makefile。 makemake 是用来编译的，它从Makefile中读取指令，然后编译。 make installmake install是用来安装的，它也从Makefile中读取指令，安装到指定的位置。 ls-l 列出文件的详细信息，如创建者，创建时间，文件的读写权限列表等等。-a 列出文件下所有的文件，包括以“.“开头的隐藏文件（linux下文件隐藏文件是以.开头的，如果存在..代表存在着父目录）。 grep(global search regular expression(RE) and print out the line,全面搜索正则表达式并把行打印出来) 是一种强大的文本搜索工具，它能使用正则表达式搜索文本，并把匹配的行打印出来。1# grep [-acinv] [--color=auto] '搜寻字符串' filename 选项与参数：-a ：将 binary 文件以 text 文件的方式搜寻数据-c ：计算找到 ‘搜寻字符串’ 的次数-i ：忽略大小写的不同，所以大小写视为相同-n ：顺便输出行号-v ：反向选择，亦即显示出没有 ‘搜寻字符串’ 内容的那一行–color=auto ：可以将找到的关键词部分加上颜色的显示 ln：为源文件在另外一个位置（目标路径下）建立一个同步的链接。注：链接有两种，一种被称为硬链接（Hard Link），另一种被称为符号链接（Symbolic Link）。建立硬链接时，链接文件和被链接文件必须位于同一个文件系统中，并且不能建立指向目录的硬链接。而对符号链接，则不存在这个问题。默认情况下，ln产生硬链接。用法：1# ln -s 源文件 目标文件 linux下文件的一些文件颜色的含义绿色—-&gt;代表可执行文件，红色—-&gt;代表压缩文件深蓝色—-&gt;代表目录浅蓝色—–&gt;代表链接文件灰色—-&gt;代表其它的一些文件 配置云服务器之升级python版本注：Linux服务器下安装python3.6.7版本（linux服务器本来有python3.4和python2.7版本，默认使用的是2.7版本）主要步骤：下载解压-配置-编译-安装-设置软链接1.下载安装包并解压官方网址：https://www.python.org/downloads/下载linux环境的安装包：Python-3.6.7.tgz，通过XFTP上传到云服务器的中的指定文件夹，我默认的是：/root/mypakage。1# tar –zxvf Python-3.6.7.tgz解压到当前路径 配置1# cd Python-3.6.7 进入到当前解压的文件夹1# ./configure 编译1# make 安装1# make install 设置软链接我的python3.6.7安装路径是 /usr/local/bin未设置软链接之前执行：1# ls –al /usr/bin | grep python 执行软链接：将usr/bin/python的连接指向usr/local/bin/python312# mv /usr/bin/python /usr/bin/python.bak# ln /usr/local/bin/python3 /usr/bin/python 软链接设置完成，查看链接：1# ls –al /usr/bin | grep python 验证结果：]]></content>
       <tags>
         <tag>云服务器</tag>
@@ -50,7 +50,7 @@
   </entry>
   <entry>
     <title><![CDATA[读"Web性能测试实战详解"总结 -- 测试方法]]></title>
-    <url>%2Fhome%2F2018%2F10%2F23%2F%E8%AF%BBWeb%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95%E5%AE%9E%E6%88%98%E8%AF%A6%E8%A7%A3%E6%80%BB%E7%BB%93-%E6%B5%8B%E8%AF%95%E6%96%B9%E6%B3%95%2F</url>
+    <url>%2F2018%2F10%2F23%2F%E8%AF%BBWeb%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95%E5%AE%9E%E6%88%98%E8%AF%A6%E8%A7%A3%E6%80%BB%E7%BB%93-%E6%B5%8B%E8%AF%95%E6%96%B9%E6%B3%95%2F</url>
     <content type="text"><![CDATA[Web性能测试的前提条件：A 一个稳定的Web应用版本B 性能测试所处的测试环境，必须独立于开发环境，并且尽可能类似于生产环境。 性能测试方法分类：a) 性能测试（performance testing）狭义上的一个测试方法，Web应用的性能测试方法，就是通过模拟若干用户对于网站的访问，获得性能计数器和其它指标的数据，再分析它们以进行性能评估。它是实时性能测试所必须进行的一种方法。b) 压力测试（stress testing）c) 负载测试 （load testing）d) 并发测试 （concurrency testing）e) 配置测试 （configuration testing）f) 耐久度测试 （endurance testing）g) 可靠性测试 （Reliability testing）h) 剑锋冲击测试 （spike testing）i) 失败恢复测试 （failover testing） 网站版本的选择：稳定的测试版本]]></content>
       <tags>
         <tag>Web性能测试实战详解</tag>
@@ -58,7 +58,7 @@
   </entry>
   <entry>
     <title><![CDATA[读Web性能测试实战详解总结 -- 基础部分2]]></title>
-    <url>%2Fhome%2F2018%2F10%2F21%2F%E8%AF%BBWeb%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95%E5%AE%9E%E6%88%98%E8%AF%A6%E8%A7%A3%E6%80%BB%E7%BB%93-%E5%9F%BA%E7%A1%80%E9%83%A8%E5%88%862%2F</url>
+    <url>%2F2018%2F10%2F21%2F%E8%AF%BBWeb%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95%E5%AE%9E%E6%88%98%E8%AF%A6%E8%A7%A3%E6%80%BB%E7%BB%93-%E5%9F%BA%E7%A1%80%E9%83%A8%E5%88%862%2F</url>
     <content type="text"><![CDATA[性能：软硬件对于其提供的服务及时性，可用性要求的符合程度。 WEB性能：由于WEB应用时基于交互式的，所以web性能更偏向于对及时性的满足（即，服务要及时的给与用户请求的反馈）。Web的可用性，主要描述web应用在正常情况下最多能同时服务的用户数量，以及服务持续时间。 A) 响应时间：衡量及时性B) 最大并发用户数：衡量可用性，web应用在不出现系统崩溃时，所能同时提供的最大用户数量。Web性能测试的目的： 发现系统的代码缺陷：需要考虑性能变差是否由于web应用代码中的bug 发现系统的工作能力 发现系统性能优化的关键点影响web性能的重要硬件之一：cpu 装有64位cpu的电脑可以安装32位或64位操作系统，反之则不然。 Cpu主要由运算器、控制器、寄存器组和内部总线构成。 Cpu指标（服务器不是越贵越好，应根据其执行任务的类型）：a) Core speed：核心速度值越大越快，单位一般为Mhz。很多cpu会在系统不繁忙的时候降低速度运行以延长寿命，降低功耗。b) Multiplier：倍频指cpu核心速度与连接cpu和其他芯片之间数据线速度的比率c) Bus speed: 总线速度前端总线（和cpu连接）的速度d) 多核问题：多核cpu对于改善web性能很有好处，但是对于大规模单线程计算的应用来说，则比较浪费影响web性能的重要硬件之一：硬盘硬盘指标：a) 硬盘类型：硬盘采用什么方式存储数据，传输数据b) 硬盘转速：硬盘中碟片的转速c) 硬盘的缓存：大小代表硬盘为了读取速度更快而设置的缓存容量]]></content>
       <tags>
         <tag>Web性能测试实战详解</tag>
@@ -66,7 +66,7 @@
   </entry>
   <entry>
     <title><![CDATA[读“Web性能测试实战详解”总结 -- 基础部分1]]></title>
-    <url>%2Fhome%2F2018%2F10%2F13%2F%E8%AF%BBWeb%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95%E5%AE%9E%E6%88%98%E8%AF%A6%E8%A7%A3%E6%80%BB%E7%BB%93%20--%20%E5%9F%BA%E7%A1%80%E9%83%A8%E5%88%861%2F</url>
+    <url>%2F2018%2F10%2F13%2F%E8%AF%BBWeb%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95%E5%AE%9E%E6%88%98%E8%AF%A6%E8%A7%A3%E6%80%BB%E7%BB%93%20--%20%E5%9F%BA%E7%A1%80%E9%83%A8%E5%88%861%2F</url>
     <content type="text"><![CDATA[Web应用的网站与一般的具有客户端的软件的不同：a) Web应用更新后，用户可以马上看见更新的内容，而客户端产品在新版本未发布前只能使用旧版本功能。b) 网站主要以服务器为核心，软件主要运行在服务器上，然而客户端产品主要运行在用户电脑上。 软件危机：a) 软件需求的增长无法快速满足。b) 软件生产成本变高。c) 软件生产进度难以控制。d) 软件的用户需求不容易定义。e) 质量不易保证。f) 可维护性变差。 软件生命周期模型：a) 大爆炸模型（big-bang）b) 瀑布模型（waterfall）c) 螺旋模型（spiral）d) 边做边改模型（code and fix） 软件过程的几个阶段：a) 项目启动b) 项目设计c) 项目执行d) 项目竣工 软件发布的方式：a) RTM（ready to market）：光盘刻录b) RTW（ready to web）：在网络上提供下载链接c) RTO（ready to Operation）：在服务器上部署软件产品 Bug标准：a) 软件没有实现说明书中列出来的功能b) 软件出现了说明书中提到的不应出现的情况c) 软件中实现了说明书中没有的提到的功能d) 软件没有实现说明书中没有提到但应该实现的功能e) 软件难以学习，使用，运转速度慢，用户认为无法达到预期 黑盒测试发现bug的类型：a) 功能错误或遗漏b) 界面错误c) 数据结构或外部数据库访问错误d) 性能错误e) 初始化和终止错误 黑盒测试的测试用例设计原则：a) 测试覆盖率相同情况下，测试用例尽可能少（运行测试用例所花时间和成本就越少）b) 现有的测试用例要达到越高的测试覆盖率越好 黑盒测试的用例设计方法：a) 等价类划分法：关注值域b) 边界值分析法：关注不同值域之间的变化点c) 错误推测法：关注代码变动和历史上bug出现最多的点d) 因果图法：关注被测软件逻辑上的因果关系e) 判定表驱动分析方法：关注被测软件中条件选择顺序f) 正交实验设计方法g) 功能图分析方法 网页的功能测试：首先观察网页中的包含的内容，如文本框，下拉菜单，文字链接等，然后测试这些元素的显示是否正常，功能是否实现。网页的功能测试需要验证：a) 链接测试（后期详述）：文字或图片链接的有效性b) 表单提交测试c) 网页内容、用户界面和多语言测试d) 浏览器交互测试，如修改浏览器选项设置，以发现当前网页的问题e) 其他特殊功能的测试，如上传功能等 网页测试考虑的其他方面：a) 性能测试b) 兼容性测试c) 安全测试]]></content>
       <tags>
         <tag>Web性能测试实战详解</tag>
@@ -74,7 +74,7 @@
   </entry>
   <entry>
     <title><![CDATA[2018年测试岗面试]]></title>
-    <url>%2Fhome%2F2018%2F10%2F10%2F2018%E5%B9%B4%E6%B5%8B%E8%AF%95%E5%B2%97%E9%9D%A2%E8%AF%95%2F</url>
+    <url>%2F2018%2F10%2F10%2F2018%E5%B9%B4%E6%B5%8B%E8%AF%95%E5%B2%97%E9%9D%A2%E8%AF%95%2F</url>
     <content type="text"><![CDATA[整理的面试题目一、 排序算法： 快速排序思路：挖坑填数+分治策略1．i =最左开始; j = 最右开始; 选择基准数的序号n，挖出来形成第一个坑a[n]。2． j–由后向前找比a[n]小的数，找到后挖出此数填到坑中，形成坑a[j]。3． i++由前向后找比它大的数，找到后也挖出此数填到坑中，形成坑a[i]。4．再重复执行2，3二步，直到i==j，将基准数填入a[j]中。 冒泡排序思路：相邻两数比较，大数向上冒泡优点：稳定 / 缺点：代码：12345678910111213141516171819# 冒泡排序def bubbleSort(array): arrlen = len(array) for i in range(arrlen-1,0,-1): flag = False for j in range(0,i): if array[j]&gt;array[j+1]: temp = array[j] array[j] = array[j+1] array[j+1] = temp flag = True if flag == False: break return arrayif __name__=="__main__": arr1 = [4, 6, 8, 9, 23, 45, 90] bubbleSort_result = bubbleSort(arr1) print(bubbleSort_result) 直接插入排序思路： 对于一个数组A[0,n]的排序问题，假设认为数组在A[0,n-1]排序的问题已经解决了。 考虑A[n]的值，从右向左扫描有序数组A[0,n-1]，直到第一个小于等于A[n]的元素，将A[n]插在这个元素的后面 选择排序缺点：不稳定思路： 初始时在序列中找到最小（大）元素，放到序列的起始位置作为已排序序列； 再从剩余未排序元素中继续寻找最小（大）元素，放到已排序序列的末尾。 以此类推，直到所有元素均排序完毕。 Shell排序思路：shell排序是把记录按下标的一定增量分组，对每组使用直接插入排序算法排序；随着增量逐渐减少，每组包含的关键词越来越多，当增量减至1时，整个文件恰被分成一组，算法便终止 堆排序：缺点：不稳定 时间复杂度总结：二．查找算法： 二分查找思路： 对数列a[n]由小到大排序，最左的指针为Low，最右指针为High，High&gt;Low，目标数据target； 判断a[(low+high)/2] == target 是否为成立，成立则a[(low+high)/2]即为目标数据；不成立，判断a[(low+high)/2]与target的大小； 如果a[(low+high)/2]&gt;target，那么High指针指向序号(low+high)/2-1；如果a[(low+high)/2]&lt;target，那么Low指针指向序号(low+high)/2+1； 重复2，3至找到目标数据。当Low指针&gt;=High指针时，跳出循环，return None。代码：1234567891011121314151617181920212223#二分查找def banary_search(array, target): # 数组的第一个数的数序 low = 0 # 数组的最后一个数的数序 high = len(array) - 1 # 循环查找 while low &lt;= high: # low-high中间数的数序 mid = int((low + high) / 2) guess = array[mid] if guess &gt; target: high = mid - 1 if guess &lt; target: low = mid + 1 if guess == target: return mid return Noneif __name__=="__main__": arr1 = [4, 6, 8, 9, 23, 45, 90] banary_search_result = banary_search(arr1,45) print(banary_search_result)]]></content>
       <tags>
         <tag>面试题</tag>
@@ -82,7 +82,7 @@
   </entry>
   <entry>
     <title><![CDATA[基于PageObject设计模式的自动化测试实践]]></title>
-    <url>%2Fhome%2F2018%2F03%2F26%2F%E5%9F%BA%E4%BA%8EPageObject%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E7%9A%84%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E5%AE%9E%E8%B7%B5%2F</url>
+    <url>%2F2018%2F03%2F26%2F%E5%9F%BA%E4%BA%8EPageObject%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E7%9A%84%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E5%AE%9E%E8%B7%B5%2F</url>
     <content type="text"><![CDATA[这里是PageObject设计模式的官网例子。我在阅读了大量的博客后，有了一些自己的理解，并写了一个拖拽功能的实践。先上图在我的理解中，pageObject实现UI自动化测试的优点在于：1.分离业务逻辑（测试用例），页面定位与用户动作库的各层。2.让各层更加专注于丰富各层的功能。业务逻辑层，可以更多的考虑测试覆盖率，测试用例的完善程度或者考虑用户的使用场景;页面定位层，可以更多的考虑系统不同页面各元素的定位问题，如何更快更好的存储元素的位置信息;用户的动作库，可以考虑如何将webdriver中的方法封装成可复用的用户动作方法，来充实自己的公共方法库。以下是我通过参考网上相关博客后，自己写的拖拽功能的实践。基本方法的封装：test_1_basePage.py12345678910111213141516171819202122232425from selenium.webdriver.support.wait import WebDriverWaitfrom selenium.webdriver.common.action_chains import ActionChainsfrom selenium import webdriverclass BasePage(object): def __init__(self,selenium_driver,base_url): self.driver =selenium_driver self.base_url = base_url def _open(self,base_url): self.driver.maximize_window() self.driver.get(base_url) def drag_2_where(self,drag_loc,x,y): try: actions = ActionChains(self.driver) actions.move_to_element(drag_loc) actions.click_and_hold() actions.pause(2) actions.move_by_offset(x, y) actions.pause(2) actions.release() actions.pause(2) actions.perform() except AttributeError: print("拖拽动作失败") 页面对象：test_2_login.py1234567891011121314151617from selenium.webdriver.support.wait import WebDriverWaitfrom selenium import webdriverfrom selenium.webdriver.common.by import Byfrom test_1_basePage import BasePagedrag_loc1 ='/html/body/div[2]/div/div[2]/div[2]/div[2]/div/div[2]/div[3]/div/div/div[2]/div[2]'x = 166 #X轴方向拖动长度y = 0 #y轴方向拖动长度class LoginPage(BasePage): def open(self): #调用page中的_open打开连接 self._open(self.base_url) #拖拽验证： def drag_to(self): drag_loc = self.driver.find_element(By.XPATH,drag_loc1) self.drag_2_where(drag_loc,x,y) 测试用例：test_case_1_login.py123456789101112131415161718192021222324252627import unittest from test_2_login import LoginPagefrom selenium import webdriverclass Case1(unittest.TestCase): def setUp(self): options = webdriver.ChromeOptions() options.add_argument("--no-sandbox") self.driver = webdriver.Chrome(executable_path="XXpath/to/chromedriverXX", chrome_options=options) self.driver.implicitly_wait(30) self.url ="http://dun.163.com/trial/jigsaw" #用例执行体 def test_login(self): #声明LoginPage类对象 login_page = LoginPage(self.driver,self.url) #调用打开页面组件 login_page.open() #拖拽验证 #login_page.drag_to() def tearDown(self): self.driver.quit() if __name__ == "__main__": unittest.main() 以上是利用po模式的关于拖拽的小实践，实践后才也发现这个功能有一些缺点：1.页面对象层没有将测试数据（位置信息和输入参数）从py文件中分离出来; 2.有些参数例如x,y放置在页面对象这一层中并不是很好; 3.页面对象层中注重的应该是页面元素的定位，这层的还需要优化so,待我在实践中探索,优化后……再来更新……]]></content>
       <tags>
         <tag>webdriver</tag>
@@ -90,7 +90,7 @@
   </entry>
   <entry>
     <title><![CDATA[踩坑记--修改next主页的内容]]></title>
-    <url>%2Fhome%2F2018%2F03%2F24%2F%E4%BF%AE%E6%94%B9next%E4%B8%BB%E9%A2%98%E7%9A%84%E4%B8%BB%E9%A1%B5%E5%86%85%E5%AE%B9-%E8%B8%A9%E5%9D%91%2F</url>
+    <url>%2F2018%2F03%2F24%2F%E4%BF%AE%E6%94%B9next%E4%B8%BB%E9%A2%98%E7%9A%84%E4%B8%BB%E9%A1%B5%E5%86%85%E5%AE%B9-%E8%B8%A9%E5%9D%91%2F</url>
     <content type="text"><![CDATA[我的个人博客是用github+hexo+next主题搭建的。搭建成功后，next主题的首页让我有点不满意，我总感觉首页应该写点啥总结之类的，可是next主题默认的会将我所有的post文章按照时间最新一一展示出来，它还不像归档那种只展示题目，它会将内容也展示出来。本宝不开心啊~~ 但是，又不想换这种优雅的主题，所以只有自己又双叒叕(yòu,shuāng,ruò,zhuó)的去找资料看文档，修改代码了。搞了几天，其实发现很简单，不过还是记录下来吧。先上图，这是我修改过的主页。显示的是我的一篇测试牢骚。具体修改步骤：1.你的next主题的布局文件夹下找到index.swig文件,如下是我的目录2.找到该文件中的这几行123456789&#123;% block content %&#125; &lt;section id="posts" class="posts-expand"&gt; &#123;% for post in page.posts %&#125; &#123;&#123; post_template.render(post, true) &#125;&#125; &#123;% endfor %&#125; &lt;/section&gt; &#123;% include '_partials/pagination.swig' %&#125;&#123;% endblock %&#125;先解释一下，这个文件就是生成主页内容的文件，具体内容就是：遍历你的每个post并显示出来。所以我们就需要修改它只显示我们指定的文章了。修改如下：1234567891011&#123;% block content %&#125; &lt;section id="posts" class="posts-expand"&gt; &#123;% for post in page.posts %&#125; &#123;% if post.title == "2018，测试路上" %&#125; &#123;&#123; post_template.render(post, true) &#125;&#125; &#123;% endif %&#125; &#123;% endfor %&#125; &lt;/section&gt; &#123;% include '_partials/pagination.swig' %&#125;&#123;% endblock %&#125;就只加上了一个if语句让它遍历我_posts文件夹内所有的post，再显示title为“2018，测试路上”的文章。这样就成功了，但是有个问题的是post下面一般都有“赏”这部分。怎么去掉/添加呢，就在这句代码中的true/false了。1post_template.render(post, true)当为true时，则不显示，false则会显示“赏”这部分。]]></content>
       <tags>
         <tag>hexo</tag>
@@ -98,7 +98,7 @@
   </entry>
   <entry>
     <title><![CDATA[踩坑记--hexo中加入音乐]]></title>
-    <url>%2Fhome%2F2018%2F01%2F23%2Fhexo%E4%B8%AD%E5%8A%A0%E5%85%A5%E9%9F%B3%E4%B9%90-%E8%B8%A9%E5%9D%91%2F</url>
+    <url>%2F2018%2F01%2F23%2Fhexo%E4%B8%AD%E5%8A%A0%E5%85%A5%E9%9F%B3%E4%B9%90-%E8%B8%A9%E5%9D%91%2F</url>
     <content type="text"><![CDATA[我一直都想要做一个人博客。不久前，朋友推荐我来玩玩hexo，之后我就开始了自己的踩坑之旅……其实我用github+hexo搭建个人网站的时候挺顺利的，重在我修改next主题的默认样式以及加入小功能的时候，感觉有点费力。今天呢，我想讲讲我昨天是怎么把音乐给折腾出来的。在我想要给我的博客加入音乐的时候，就搜罗了网上的解决办法，一种是用网易云音乐生成iframe插件,直接复制对应歌曲下方的html代码,然后放在你想要播放音乐的页面一种是用hexo的音乐播放插件Aplayer，附上你的音乐外链。我是采用的第二种但是做这个音乐与图片外链，昨天折腾了我一下午。我在网上百度了很多方法，用qq邮箱，百度云，音乐分享的链接都没成功，去了七牛云注册又不想去实名认证，所以不能用。伤心三秒，想到了之前我给博客加入评论系统的时候，使用的leancloud，完美解决了图片与音乐外链问题。直接上方法了……leancloud看官网介绍，它是国内的一个BaaS(翻译:后端即服务：Backend as a Service)供应商，提供后台云服务。反正对于我的理解就是，可以让它当我的个人博客的一个后台，可以为我存储数据，做统计分析等等第一步：去leancloud官网，注册,选择个人用户，开发版的是免费的。第二步：登录你的leancloud账号，点击创建应用第三步：到你创建的应用里面去，点击存储，见下图，点击_File，点击上传，找到你下载好的音乐文件和你的音乐图片(图片大概70×70就够了)上传上去就行了。将列表向后拉，便可以看到对应音乐和图片的url链接啦在这里特别说明一下，有时候可能由于网络的原因，上传后音乐文件可能没有及时显示，如果你在列表中没看见你上传的文件，可以手动刷新试试。第四步: 在你想要加入音乐播放器的页面，可复制如下代码1&#123;% aplayer "可以了" "陈奕迅" "https://xxx.xxx.com/92b3af330d2274b1fa55.mp3" "https://xxx.xxx.com/xx.png" "autoplay" %&#125;如果你想放一个音乐list的话可以将上面代码换成1&#123;% aplayerlist %&#125;&#123;"narrow": false,"autoplay": true,"showlrc": 3,"mode": "random","music": [&#123;"title": "美好事物","author": "房东的猫","url": "http://xxx.xxx.com/945198c4909674765644.mp3","pic": "http://xxx.xxx.com/6e0e9e63cb0733f7ff12.png","lrc": ""&#125;,&#123;"title": "尚好的青春","author": "云の泣","url": "http://xxx.xxx.com/5b42b829b8ae08ccabe0.mp3","pic": "http://xxx.xxx.com/889df742eca5261f2fc5.png","lrc": ""&#125;,&#123;"title": "预谋邂逅","author": "阿肆","url": "http://xxx.xxx.com/1bd4f91441982710bcad.mp3","pic": "http://xxx.xxx.com/f72d61579f74d4ff9ce0.png","lrc": ""&#125;]&#125;&#123;% endaplayerlist %&#125;效果如下：PS：如果上面的步骤你都做好了，但是音乐不能播放，显示error happen的话，应该是你的音乐文件有问题，可以去leancloud点击一下你的音乐文件试试能否播放。]]></content>
       <tags>
         <tag>hexo</tag>
