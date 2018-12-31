@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[踩坑记-博客绑定域名]]></title>
     <url>%2F2018%2F12%2F31%2F%E8%B8%A9%E5%9D%91%E8%AE%B0-%E5%8D%9A%E5%AE%A2%E7%BB%91%E5%AE%9A%E5%9F%9F%E5%90%8D%2F</url>
-    <content type="text"><![CDATA[之前用github和hexo搭建了一个我自己的博客。用https://green523.github.io能成功访问。然后我又买了一个域名www.zwenXXX.com，想绑定到我的博客地址上。如下为操作步骤： 在博客的站点文件下找到source文件夹，在其下添加CNAME文件CNAME中添加你的域名信息，注意不要前面的协议头 执行1234&#123;% block content %&#125;Hexo dHexo g&#123;% endblock %&#125; 添加解析我是在腾讯云上买的域名，点击解析，添加解析记录，如图我添加的二级域名 然后等待它生效。由于我添加的是二级域名，期间可以不断访问blog.zwen523.com，查看是否生效。如果第二天还是访问不了，可能就是出问题了，需要排查。我的是等了一下午，晚上访问的时候生效的。]]></content>
+    <content type="text"><![CDATA[之前用github和hexo搭建了一个我自己的博客。用https://green523.github.io 能成功访问。然后我又买了一个域名 www.zwenXXX.com ，想绑定到我的博客地址上。如下为操作步骤： 在博客的站点文件下找到source文件夹，在其下添加CNAME文件CNAME中添加你的域名信息，注意不要前面的协议头 执行1234&#123;% block content %&#125;Hexo dHexo g&#123;% endblock %&#125; 添加解析我是在腾讯云上买的域名，点击解析，添加解析记录，如图我添加的二级域名 然后等待它生效。由于我添加的是二级域名，期间可以不断访问blog.zwen523.com，查看是否生效。如果第二天还是访问不了，可能就是出问题了，需要排查。我的是等了一下午，晚上访问的时候生效的。]]></content>
       <tags>
         <tag>hexo</tag>
       </tags>
